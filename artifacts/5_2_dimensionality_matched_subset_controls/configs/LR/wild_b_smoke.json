@@ -1,0 +1,9 @@
+{
+  "model": "lr",
+  "view": "wild_b",
+  "seeds": [13],
+  "candidate_dimensions": [16],
+  "families": ["header", "section", "imports", "strings"],
+  "subset_repeats": 1,
+  "null_repeats": 1
+}

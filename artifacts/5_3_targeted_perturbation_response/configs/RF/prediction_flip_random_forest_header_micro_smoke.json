@@ -1,0 +1,30 @@
+{
+  "data_root": "../../../../Data/",
+  "platform": "Win32",
+  "train_weeks": [
+    "2023-09-24_2023-09-30",
+    "2023-10-01_2023-10-07",
+    "2023-10-08_2023-10-14",
+    "2023-10-15_2023-10-21"
+  ],
+  "test_weeks": [
+    "2024-09-22_2024-09-28"
+  ],
+  "seeds": [13],
+  "feature_groups": ["header"],
+  "perturbation_strengths": [0.01],
+  "random_trials": 1,
+  "decision_threshold": 0.5,
+  "model_type": "random_forest",
+  "importance_method": "permutation",
+  "num_workers": 1,
+  "rf_n_estimators": 500,
+  "rf_n_jobs": -1,
+  "omp_num_threads": 1,
+  "balance_train": true,
+  "balance_test": true,
+  "max_train_per_class": 5000,
+  "max_test_per_class": 5000,
+  "validation_fraction": 0.2,
+  "permutation_repeats": 1
+}

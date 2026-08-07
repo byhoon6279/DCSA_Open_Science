@@ -1,0 +1,16 @@
+# macOS
+._*
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Raw EMBER2024 dataset
+Data/
+EMBER2024/
+
+# Large intermediate experiment outputs. Regenerable by rerunning the
+# corresponding bundled experiment script if ever needed.
+**/importance_reports/seed_*_imports_token_importance.csv
+**/density_rows.csv

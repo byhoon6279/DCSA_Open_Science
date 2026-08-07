@@ -1,0 +1,32 @@
+[
+  {
+    "seed": 13,
+    "train_val_sha_overlap_count": 0,
+    "train_size": 32000,
+    "val_size": 8000
+  },
+  {
+    "seed": 42,
+    "train_val_sha_overlap_count": 0,
+    "train_size": 32000,
+    "val_size": 8000
+  },
+  {
+    "seed": 77,
+    "train_val_sha_overlap_count": 0,
+    "train_size": 32000,
+    "val_size": 8000
+  },
+  {
+    "seed": 123,
+    "train_val_sha_overlap_count": 0,
+    "train_size": 32000,
+    "val_size": 8000
+  },
+  {
+    "seed": 2024,
+    "train_val_sha_overlap_count": 0,
+    "train_size": 32000,
+    "val_size": 8000
+  }
+]

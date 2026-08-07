@@ -1,0 +1,16 @@
+model,feature_group,pooled_delta_auc,class_conditional_delta_auc,pooled_delta_mix_at_10,class_balanced_delta_mix_at_10
+LR,all,-0.049,-0.045,+0.070,+0.074
+LR,header,-0.078,-0.076,+0.065,+0.071
+LR,imports,-0.040,-0.034,-0.002,+0.027
+LR,section,-0.083,-0.088,+0.055,+0.062
+LR,strings,-0.130,-0.122,+0.094,+0.097
+LightGBM,all,-0.012,-0.011,+0.070,+0.074
+LightGBM,header,-0.045,-0.043,+0.065,+0.071
+LightGBM,imports,-0.014,-0.006,-0.002,+0.027
+LightGBM,section,-0.028,-0.027,+0.055,+0.062
+LightGBM,strings,-0.048,-0.044,+0.094,+0.097
+RF,all,-0.022,-0.020,+0.070,+0.074
+RF,header,-0.042,-0.039,+0.065,+0.071
+RF,imports,-0.006,-0.005,+0.005,+0.034
+RF,section,-0.026,-0.025,+0.055,+0.062
+RF,strings,-0.053,-0.049,+0.094,+0.097

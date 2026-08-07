@@ -1,0 +1,47 @@
+\begin{table}[t]
+\centering
+\caption{Density-conditioned reliability results for the MLP extension in Wild (B).}
+\label{tab:app_mlp_density_reliability_full}
+
+\resizebox{0.95\columnwidth}{!}{%
+\begin{tabular}{llccc}
+\toprule
+\textbf{Group} & \textbf{Density bin}
+& \textbf{AUC}
+& \textbf{Positive rate}
+& \textbf{Silhouette} \\
+\midrule
+
+\multirow{3}{*}{All}
+& High & 0.9972 & 0.3443 &  0.2797 \\
+& Mid  & 0.9884 & 0.6062 &  0.0546 \\
+& Low  & 0.9643 & 0.3299 & -0.0051 \\
+\midrule
+
+\multirow{3}{*}{Header}
+& High & 0.9994 & 0.7176 & 0.4588 \\
+& Mid  & 0.9646 & 0.2978 & 0.1114 \\
+& Low  & 0.9510 & 0.5423 & 0.0271 \\
+\midrule
+
+\multirow{3}{*}{Section}
+& High & 0.9981 & 0.4295 &  0.2976 \\
+& Mid  & 0.9652 & 0.3658 &  0.0857 \\
+& Low  & 0.9540 & 0.6804 & -0.0519 \\
+\midrule
+
+\multirow{3}{*}{Imports}
+& High & 0.8560 & 0.3355 &  0.2353 \\
+& Mid  & 0.9634 & 0.6295 &  0.1160 \\
+& Low  & 0.9013 & 0.2321 & -0.0542 \\
+\midrule
+
+\multirow{3}{*}{Strings}
+& High & 0.9974 & 0.3307 & 0.2266 \\
+& Mid  & 0.9653 & 0.5549 & 0.0173 \\
+& Low  & 0.9390 & 0.4297 & 0.0399 \\
+
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,19 @@
+Subset,Selection,Type,Delta AUC,Flip Rate,M->B Rate,Signed Shift
+Header,Top-1,Important,-0.016,0.070,0.055,-0.059
+Header,Top-1,Important,-0.008,0.031,0.026,-0.029
+Header,Top-1,Random,-0.002,0.010,0.008,-0.008
+Header,Top-1,Random,-0.001,0.005,0.004,-0.004
+Header,Top-2,Important,-0.016,0.071,0.055,-0.060
+Header,Top-2,Important,-0.008,0.031,0.027,-0.030
+Header,Top-2,Random,-0.004,0.021,0.015,-0.016
+Header,Top-2,Random,-0.002,0.010,0.008,-0.008
+Header,Top-3,Important,-0.016,0.071,0.055,-0.059
+Header,Top-3,Important,-0.008,0.032,0.026,-0.029
+Header,Top-3,Random,-0.006,0.030,0.023,-0.024
+Header,Top-3,Random,-0.003,0.014,0.011,-0.012
+Imports,1%,Important,0.027,0.152,0.024,0.062
+Imports,1%,Random,-0.001,0.022,0.008,-0.001
+Imports,5%,Important,-0.006,0.154,0.071,-0.028
+Imports,5%,Random,-0.014,0.068,0.032,-0.015
+Imports,10%,Important,-0.072,0.193,0.157,-0.111
+Imports,10%,Random,-0.023,0.099,0.052,-0.025

@@ -1,0 +1,4 @@
+Selection,Delta AUC (Imp),Delta AUC (Rand),M->B Rate (Imp),M->B Rate (Rand),Signed Shift (Imp),Signed Shift (Rand),Flip Rate (Imp),Flip Rate (Rand)
+1%,0.018,0.001,0.052,0.003,-0.032,-0.001,0.154,0.010
+5%,-0.057,0.001,0.196,0.012,-0.148,-0.006,0.223,0.035
+10%,-0.049,0.001,0.194,0.024,-0.152,-0.015,0.220,0.060

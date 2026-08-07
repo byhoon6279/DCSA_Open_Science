@@ -1,0 +1,23 @@
+family,model,outcome,feature_group,status,path,note
+main_models,LR,auc_drop,header,ok,artifacts/5_3_targeted_perturbation_response/results/LR/feature_perturbation_balanced_main/k_10/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LR,auc_drop,imports,ok,artifacts/5_3_targeted_perturbation_response/results/LR/feature_perturbation_balanced_main/k_10/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LR,flip_rate,header,ok,artifacts/5_3_targeted_perturbation_response/results/LR/prediction_flip_balanced_main/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LR,flip_rate,imports,ok,artifacts/5_3_targeted_perturbation_response/results/LR/prediction_flip_balanced_main/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LightGBM,auc_drop,header,ok,artifacts/5_3_targeted_perturbation_response/results/LightGBM/feature_perturbation_lightgbm_permutation_balanced_main/k_10/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LightGBM,auc_drop,imports,ok,artifacts/5_3_targeted_perturbation_response/results/LightGBM/feature_perturbation_lightgbm_permutation_balanced_main/k_10/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LightGBM,flip_rate,header,ok,artifacts/5_3_targeted_perturbation_response/results/LightGBM/prediction_flip_lightgbm_balanced_main/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,LightGBM,flip_rate,imports,ok,artifacts/5_3_targeted_perturbation_response/results/LightGBM/prediction_flip_lightgbm_balanced_main/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,RF,auc_drop,header,ok,artifacts/5_3_targeted_perturbation_response/results/RF/rq2_2_rf_full_wild_b/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,RF,auc_drop,imports,ok,artifacts/5_3_targeted_perturbation_response/results/RF/rq2_2_rf_full_wild_b/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,RF,flip_rate,header,ok,artifacts/5_3_targeted_perturbation_response/results/RF/rq2_3_rf_full_wild_b/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+main_models,RF,flip_rate,imports,ok,artifacts/5_3_targeted_perturbation_response/results/RF/rq2_3_rf_full_wild_b/trial_results.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,auc_drop,all,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,auc_drop,header,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,auc_drop,section,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,auc_drop,imports,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,auc_drop,strings,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,flip_rate,all,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,flip_rate,header,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,flip_rate,section,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,flip_rate,imports,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.
+mlp_extension,MLP,flip_rate,strings,ok,artifacts/MLP/results/5_3/mlp_rq2_targeted_masking_wild_b_main/masking_rows.csv,Used exact one-sided sign-flip test on 5 seed-level paired deltas.

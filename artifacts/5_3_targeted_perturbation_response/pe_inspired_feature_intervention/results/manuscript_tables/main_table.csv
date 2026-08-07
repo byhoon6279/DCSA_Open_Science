@@ -1,0 +1,29 @@
+Model,View,Subset,Operator,Selection,M->B Rate (Imp),M->B Rate (Rand),Signed Shift (Imp),Signed Shift (Rand),AUC Change (Imp: Perturbed - Baseline),AUC Change (Rand: Perturbed - Baseline),Flip Rate (Imp),Flip Rate (Rand)
+LR,Wild (B),Header,Header Substitution,Top-1,0.055,0.008,-0.059,-0.008,-0.016,-0.002,0.070,0.010
+LR,Wild (B),Header,Header Jitter,Top-1,0.026,0.004,-0.029,-0.004,-0.008,-0.001,0.031,0.005
+LR,Wild (B),Header,Header Substitution,Top-3,0.055,0.023,-0.059,-0.024,-0.016,-0.006,0.071,0.030
+LR,Wild (B),Header,Header Jitter,Top-3,0.026,0.011,-0.029,-0.012,-0.008,-0.003,0.032,0.014
+LR,Wild (B),Imports,Import Mass Injection,1%,0.024,0.008,0.062,-0.001,0.027,-0.001,0.152,0.022
+LR,Wild (B),Imports,Import Mass Injection,5%,0.071,0.032,-0.028,-0.015,-0.006,-0.014,0.154,0.068
+LR,Wild (B),Imports,Import Mass Injection,10%,0.157,0.052,-0.111,-0.025,-0.072,-0.023,0.193,0.099
+LR,Unpacked (B),Header,Header Substitution,Top-1,0.055,0.008,-0.061,-0.008,-0.017,-0.002,0.074,0.011
+LR,Unpacked (B),Header,Header Jitter,Top-1,0.026,0.004,-0.030,-0.004,-0.008,-0.001,0.032,0.005
+LR,Unpacked (B),Header,Header Substitution,Top-3,0.056,0.023,-0.062,-0.025,-0.017,-0.007,0.075,0.032
+LR,Unpacked (B),Header,Header Jitter,Top-3,0.027,0.011,-0.030,-0.012,-0.009,-0.003,0.033,0.015
+LR,Unpacked (B),Imports,Import Mass Injection,1%,0.014,0.008,0.076,-0.002,0.039,-0.002,0.145,0.023
+LR,Unpacked (B),Imports,Import Mass Injection,5%,0.082,0.029,-0.027,-0.014,-0.019,-0.013,0.190,0.065
+LR,Unpacked (B),Imports,Import Mass Injection,10%,0.151,0.047,-0.123,-0.026,-0.078,-0.024,0.179,0.089
+LightGBM,Wild (B),Header,Header Substitution,Top-1,0.060,0.014,-0.047,-0.012,-0.008,-0.002,0.075,0.017
+LightGBM,Wild (B),Header,Header Jitter,Top-1,0.027,0.005,-0.022,-0.004,-0.003,-0.001,0.033,0.007
+LightGBM,Wild (B),Header,Header Substitution,Top-3,0.104,0.040,-0.098,-0.036,-0.013,-0.005,0.117,0.049
+LightGBM,Wild (B),Header,Header Jitter,Top-3,0.033,0.014,-0.025,-0.011,-0.004,-0.002,0.043,0.020
+LightGBM,Wild (B),Imports,Import Mass Injection,1%,0.069,0.003,-0.048,-0.001,0.013,0.000,0.166,0.008
+LightGBM,Wild (B),Imports,Import Mass Injection,5%,0.279,0.014,-0.189,-0.008,-0.081,0.001,0.284,0.036
+LightGBM,Wild (B),Imports,Import Mass Injection,10%,0.308,0.028,-0.216,-0.019,-0.084,-0.000,0.311,0.065
+LightGBM,Unpacked (B),Header,Header Substitution,Top-1,0.064,0.014,-0.054,-0.012,-0.010,-0.002,0.079,0.018
+LightGBM,Unpacked (B),Header,Header Jitter,Top-1,0.027,0.005,-0.023,-0.004,-0.004,-0.001,0.034,0.007
+LightGBM,Unpacked (B),Header,Header Substitution,Top-3,0.098,0.040,-0.094,-0.036,-0.014,-0.005,0.115,0.050
+LightGBM,Unpacked (B),Header,Header Jitter,Top-3,0.033,0.015,-0.028,-0.012,-0.004,-0.002,0.044,0.021
+LightGBM,Unpacked (B),Imports,Import Mass Injection,1%,0.052,0.003,-0.032,-0.001,0.018,0.001,0.154,0.010
+LightGBM,Unpacked (B),Imports,Import Mass Injection,5%,0.196,0.012,-0.148,-0.006,-0.057,0.001,0.223,0.035
+LightGBM,Unpacked (B),Imports,Import Mass Injection,10%,0.194,0.024,-0.152,-0.015,-0.049,0.001,0.220,0.060

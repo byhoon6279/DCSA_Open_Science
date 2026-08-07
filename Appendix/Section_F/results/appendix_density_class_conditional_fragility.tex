@@ -1,0 +1,38 @@
+\begin{table}[t]
+\centering
+\caption{Class-conditional masking sensitivity.}
+\label{tab:appendix_density_class_conditional_fragility}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llrrrrr}
+\toprule
+\textbf{Model} & \textbf{Group} & \textbf{Mask} & \textbf{\makecell{Pooled degradation\\difference (low$-$high)}} & \textbf{\makecell{Class-conditional degradation\\difference (low$-$high)}} & \textbf{Class-Cond.\ $\Delta$(M$\rightarrow$B)} & \textbf{Class-Cond.\ $\Delta$(B$\rightarrow$M)} \\
+\midrule
+\multirow{6}{*}{LR}
+          & header  & 1\%  & $+0.091$ & $+0.091$ & $+0.000$ & $+0.382$ \\
+          & header  & 5\%  & $+0.157$ & $+0.162$ & $+0.036$ & $+0.271$ \\
+          & header  & 10\% & $+0.190$ & $+0.191$ & $-0.108$ & $+0.097$ \\
+          & imports & 1\%  & $-0.014$ & $-0.028$ & $+0.030$ & $+0.035$ \\
+          & imports & 5\%  & $+0.037$ & $+0.003$ & $+0.122$ & $+0.058$ \\
+          & imports & 10\% & $+0.041$ & $+0.001$ & $+0.098$ & $+0.090$ \\
+\midrule
+\multirow{6}{*}{LightGBM}
+          & header  & 1\%  & $+0.008$ & $+0.008$ & $+0.001$ & $+0.048$ \\
+          & header  & 5\%  & $+0.071$ & $+0.061$ & $+0.088$ & $+0.185$ \\
+          & header  & 10\% & $+0.110$ & $+0.114$ & $+0.031$ & $+0.407$ \\
+          & imports & 1\%  & $+0.030$ & $+0.030$ & $+0.141$ & $+0.019$ \\
+          & imports & 5\%  & $+0.045$ & $+0.041$ & $+0.160$ & $+0.036$ \\
+          & imports & 10\% & $+0.043$ & $+0.049$ & $+0.120$ & $+0.084$ \\
+\midrule
+\multirow{6}{*}{RF}
+          & header  & 1\%  & $+0.009$ & $+0.011$ & $+0.004$ & $+0.050$ \\
+          & header  & 5\%  & $+0.038$ & $+0.037$ & $+0.008$ & $+0.251$ \\
+          & header  & 10\% & $+0.084$ & $+0.093$ & $+0.070$ & $+0.179$ \\
+          & imports & 1\%  & $+0.010$ & $+0.009$ & $+0.069$ & $-0.019$ \\
+          & imports & 5\%  & $+0.017$ & $+0.012$ & $+0.109$ & $-0.009$ \\
+          & imports & 10\% & $+0.032$ & $+0.024$ & $+0.104$ & $-0.000$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Mean pairwise ordering conflicts between AUC and structure-level rankings across density bins.}
+\label{tab:rq3_block1_rank_disagreement}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lcc|cc|cc}
+\toprule
+\multirow{2}{*}{\textbf{Density bin}} &
+\multicolumn{2}{c|}{\textbf{LR}} &
+\multicolumn{2}{c|}{\textbf{LightGBM}} &
+\multicolumn{2}{c}{\textbf{RF}} \\
+& \textbf{AUC--Mix@10} & \textbf{AUC--JS} & \textbf{AUC--Mix@10} & \textbf{AUC--JS} & \textbf{AUC--Mix@10} & \textbf{AUC--JS} \\
+\midrule
+High & \textbf{0.2} & 4.0 & 1.2 & 4.6 & 1.8 & 4.0 \\
+Mid  & 2.0 & 2.0 & 0.0 & 2.0 & 0.0 & 2.0 \\
+Low  & \textbf{3.2} & 2.0 & 1.4 & 2.2 & 1.2 & 2.0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

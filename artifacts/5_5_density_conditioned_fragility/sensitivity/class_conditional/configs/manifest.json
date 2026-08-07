@@ -1,0 +1,26 @@
+[
+  {
+    "name": "d4_lr_controlled_main",
+    "base_config": "artifacts/5_5_density_conditioned_fragility/configs/LR/density_fragility_controlled_main.json",
+    "runner": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/scripts/run_class_conditional_density_conditioned_fragility.py",
+    "python_bin": "python3 (or $PYTHON_BIN, see run_all.sh)",
+    "derived_config": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/configs/d4_lr_controlled_main.json",
+    "output_dir": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/results/LR/density_fragility_controlled_main"
+  },
+  {
+    "name": "d4_lightgbm_controlled_main_permutation",
+    "base_config": "artifacts/5_5_density_conditioned_fragility/configs/LightGBM/density_fragility_controlled_main_lightgbm.json",
+    "runner": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/scripts/run_class_conditional_density_conditioned_fragility.py",
+    "python_bin": "python3 (or $PYTHON_BIN, see run_all.sh)",
+    "derived_config": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/configs/d4_lightgbm_controlled_main_permutation.json",
+    "output_dir": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/results/LightGBM/density_fragility_controlled_main_lightgbm_permutation"
+  },
+  {
+    "name": "d4_rf_controlled_main",
+    "base_config": "artifacts/5_5_density_conditioned_fragility/configs/RF/density_fragility_controlled_main_random_forest.json",
+    "runner": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/scripts/run_class_conditional_density_conditioned_fragility_with_rf.py",
+    "python_bin": "python3 (or $PYTHON_BIN, see run_all.sh)",
+    "derived_config": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/configs/d4_rf_controlled_main.json",
+    "output_dir": "artifacts/5_5_density_conditioned_fragility/sensitivity/class_conditional/results/RF/rf_full_wild_b"
+  }
+]

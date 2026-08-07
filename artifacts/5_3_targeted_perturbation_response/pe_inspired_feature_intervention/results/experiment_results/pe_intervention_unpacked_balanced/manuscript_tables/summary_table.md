@@ -1,0 +1,20 @@
+| Subset | Selection | Type | Delta AUC | Flip Rate | M->B Rate | Signed Shift |
+| --- | --- | --- | --- | --- | --- | --- |
+| Header | Top-1 | Important | -0.017 | 0.074 | 0.055 | -0.061 |
+| Header | Top-1 | Important | -0.008 | 0.032 | 0.026 | -0.030 |
+| Header | Top-1 | Random | -0.002 | 0.011 | 0.008 | -0.008 |
+| Header | Top-1 | Random | -0.001 | 0.005 | 0.004 | -0.004 |
+| Header | Top-2 | Important | -0.017 | 0.075 | 0.056 | -0.062 |
+| Header | Top-2 | Important | -0.009 | 0.033 | 0.027 | -0.031 |
+| Header | Top-2 | Random | -0.005 | 0.022 | 0.016 | -0.017 |
+| Header | Top-2 | Random | -0.002 | 0.010 | 0.008 | -0.008 |
+| Header | Top-3 | Important | -0.017 | 0.075 | 0.056 | -0.062 |
+| Header | Top-3 | Important | -0.009 | 0.033 | 0.027 | -0.030 |
+| Header | Top-3 | Random | -0.007 | 0.032 | 0.023 | -0.025 |
+| Header | Top-3 | Random | -0.003 | 0.015 | 0.011 | -0.012 |
+| Imports | 1% | Important | 0.039 | 0.145 | 0.014 | 0.076 |
+| Imports | 1% | Random | -0.002 | 0.023 | 0.008 | -0.002 |
+| Imports | 5% | Important | -0.019 | 0.190 | 0.082 | -0.027 |
+| Imports | 5% | Random | -0.013 | 0.065 | 0.029 | -0.014 |
+| Imports | 10% | Important | -0.078 | 0.179 | 0.151 | -0.123 |
+| Imports | 10% | Random | -0.024 | 0.089 | 0.047 | -0.026 |

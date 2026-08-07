@@ -1,0 +1,17 @@
+# Recommended environment: Python 3.10
+# Version pins below correspond to the environment used to
+# produce the results and figures bundled in this artifact directory.
+#
+# Install with:
+#   pip install -r requirements.txt
+
+joblib==1.5.3
+lightgbm==4.6.0
+matplotlib==3.10.8
+numpy==2.2.6
+scikit-learn==1.7.2
+scipy==1.15.3
+seaborn==0.13.2
+torch==2.12.0
+tqdm==4.67.3
+umap-learn==0.5.12

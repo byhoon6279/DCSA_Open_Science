@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\caption{Dimensionality-matched controls at $d=32$ under Wild (B).
+Values report semantic-subset minus random-subspace differences.}
+\label{tab:ra_q4_dim32_summary}
+
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\multirow{2}{*}{\textbf{Subset}}
+& \multicolumn{2}{c}{\textbf{Classifier performance ($\Delta$AUC $\uparrow$)}}
+& \multicolumn{2}{c}{\textbf{Feature-space structure}} \\
+\cmidrule(lr){2-3}
+\cmidrule(lr){4-5}
+& \textbf{LR}
+& \textbf{LightGBM}
+& \shortstack{\textbf{$\Delta$Mix}\\\textbf{@10 $\downarrow$}}
+& \shortstack{\textbf{$\Delta$Same-family}\\\textbf{@10 $\uparrow$}} \\
+\midrule
+Header  & $+0.104$ & $+0.042$ & $-0.057$ & $+0.091$ \\
+Section & $-0.002$ & $+0.022$ & $-0.030$ & $+0.037$ \\
+Imports & $-0.086$ & $-0.130$ & $+0.149$ & $-0.139$ \\
+Strings & $+0.024$ & $+0.032$ & $-0.034$ & $+0.030$ \\
+\bottomrule
+\end{tabular}
+\end{table}

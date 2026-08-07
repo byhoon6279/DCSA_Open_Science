@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Paired important-versus-random differences in prediction flip rate under Wild (B), by model and feature group. For each model--feature-group cell, we report the masking ratio (1\%, 5\%, or 10\%) that produced the largest -- i.e., least significant -- raw sign-flip $p$-value among the three tested ratios; its Holm-adjusted $p$-value is taken from the full ratio-level correction family (36 tests for LR/LightGBM/RF, 30 tests for MLP; \ref{app:significance}). Positive mean differences indicate more prediction flips under important masking than under random masking. Direction reports the number of seeds (out of 5) showing this positive pattern. The 95\% CI is a percentile bootstrap on the same five seed-level paired differences (10{,}000 resamples); see \ref{app:significance} for how it relates to the sign-flip $p$-value. This table provides a worst-case summary for readability; the accompanying repository retains the complete ratio-level results.}
+\label{tab:significance_masking_flip}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccccc}
+\toprule
+Model & Feature group & Ratio & Mean difference & 95\% CI & Direction & Raw $p$ & Holm $p$ \\
+\midrule
+ \multirow{2}{*}{LR} & Header & 5\% & +0.056 & [-0.001, 0.126] & 3/5 & 0.125 & 1 \\
+  & Imports & 1\% & +0.079 & [0.066, 0.103] & 5/5 & 0.031 & 1 \\
+\midrule
+ \multirow{2}{*}{LightGBM} & Header & 1\% & +0.004 & [-0.013, 0.021] & 2/5 & 0.344 & 1 \\
+  & Imports & 1\% & +0.094 & [0.072, 0.117] & 5/5 & 0.031 & 1 \\
+\midrule
+ \multirow{2}{*}{RF} & Header & 1\% & +0.018 & [0.004, 0.034] & 5/5 & 0.031 & 1 \\
+  & Imports & 1\% & +0.040 & [0.025, 0.057] & 5/5 & 0.031 & 1 \\
+\midrule
+ \multirow{5}{*}{MLP} & All & 1\% & +0.348 & [0.236, 0.440] & 5/5 & 0.031 & 0.938 \\
+  & Header & 10\% & +0.012 & [-0.112, 0.190] & 1/5 & 0.5 & 0.938 \\
+  & Section & 1\% & +0.175 & [0.130, 0.224] & 5/5 & 0.031 & 0.938 \\
+  & Imports & 1\% & +0.060 & [0.049, 0.074] & 5/5 & 0.031 & 0.938 \\
+  & Strings & 1\% & +0.309 & [0.123, 0.494] & 5/5 & 0.031 & 0.938 \\
+\bottomrule
+\end{tabular}}
+\end{table}

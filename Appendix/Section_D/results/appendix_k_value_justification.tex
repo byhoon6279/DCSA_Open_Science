@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\caption{Sensitivity of $\Delta$Mix@$k$ to neighborhood size at 10\% important-feature masking.}
+\label{tab:appendix_k_value_justification}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llcccc}
+\toprule
+Model & Subset & $k=5$ & $k=10$ & $k=15$ & $k=20$ \\
+\midrule
+\multirow{2}{*}{LR}
+ & Header (Imp.)   & 0.0050 & 0.0045 & 0.0040 & 0.0037 \\
+ & Imports (Imp.)  & 0.0044 & 0.0051 & 0.0060 & 0.0065 \\
+
+\midrule
+
+\multirow{2}{*}{LGBM-gain}
+ & Header (Imp.)   & 0.0167 & 0.0155 & 0.0147 & 0.0142 \\
+ & Imports (Imp.)  & 0.0175 & 0.0183 & 0.0179 & 0.0201 \\
+
+\midrule
+
+\multirow{2}{*}{LGBM-perm}
+ & Header (Imp.)   & 0.0253 & 0.0206 & 0.0182 & 0.0166 \\
+ & Imports (Imp.)  & 0.0143 & 0.0147 & 0.0159 & 0.0162 \\
+
+\bottomrule
+\end{tabular}
+}
+\end{table}

@@ -1,0 +1,16 @@
+model,view,seed,dimension,control_type,subset_indices_hash,n_null_repeats,auc_mean,mix_at_10_mean,js_divergence_mean,same_family_rate_at_10_mean
+logistic_regression,wild_b,13,16,global_unrestricted_random,seed_level_aggregate,10,0.7420187167500001,0.2456892777777778,0.16308155226862986,0.45690399511219526
+logistic_regression,wild_b,13,32,global_unrestricted_random,seed_level_aggregate,10,0.8458890130370371,0.14081749999999998,0.08445178198167999,0.6021809718438291
+logistic_regression,wild_b,13,64,global_unrestricted_random,seed_level_aggregate,10,0.8804989486666667,0.10176875,0.13763559322151636,0.6607090419737508
+logistic_regression,wild_b,17,16,global_unrestricted_random,seed_level_aggregate,10,0.723420630287037,0.2783401111111111,0.1978645159585679,0.41383445837692834
+logistic_regression,wild_b,17,32,global_unrestricted_random,seed_level_aggregate,10,0.7915359007777777,0.14498247222222221,0.13690369146722153,0.6059934722284689
+logistic_regression,wild_b,17,64,global_unrestricted_random,seed_level_aggregate,10,0.885602821962963,0.10519816666666666,0.11832330728776078,0.653072578648275
+logistic_regression,wild_b,23,16,global_unrestricted_random,seed_level_aggregate,10,0.693274487824074,0.24740027777777782,0.09401605706624407,0.48536642949979336
+logistic_regression,wild_b,23,32,global_unrestricted_random,seed_level_aggregate,10,0.8035543749814815,0.15792652777777777,0.15469707755124434,0.579618039102991
+logistic_regression,wild_b,23,64,global_unrestricted_random,seed_level_aggregate,10,0.8648724848333333,0.11105908333333334,0.21095707816618683,0.6474824315425372
+logistic_regression,wild_b,29,16,global_unrestricted_random,seed_level_aggregate,10,0.775988741074074,0.2007988888888889,0.0374310547822131,0.512193293273968
+logistic_regression,wild_b,29,32,global_unrestricted_random,seed_level_aggregate,10,0.8236685511481483,0.13150819444444445,0.1029862142274511,0.6136554365714115
+logistic_regression,wild_b,29,64,global_unrestricted_random,seed_level_aggregate,10,0.856804444462963,0.10956702777777778,0.1424460991254039,0.6538280371435767
+logistic_regression,wild_b,31,16,global_unrestricted_random,seed_level_aggregate,10,0.779620032925926,0.21382244444444445,0.19523355587871302,0.5046583950282768
+logistic_regression,wild_b,31,32,global_unrestricted_random,seed_level_aggregate,10,0.8101051192592592,0.15310238888888889,0.0954202878620216,0.5794609423683766
+logistic_regression,wild_b,31,64,global_unrestricted_random,seed_level_aggregate,10,0.8705903289814817,0.10458697222222221,0.18286024646222274,0.6503524433858173

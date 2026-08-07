@@ -1,0 +1,26 @@
+[
+  {
+    "name": "d3_lr_controlled_main",
+    "base_config": "artifacts/5_4_density_conditioned_reliability/configs/LR/density_reliability_controlled_main.json",
+    "runner": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/scripts/run_class_conditional_density_stratified_reliability.py",
+    "python_bin": "python3 (or $PYTHON_BIN, see run_all.sh)",
+    "derived_config": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/configs/d3_lr_controlled_main.json",
+    "output_dir": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/results/LR/density_reliability_controlled_main"
+  },
+  {
+    "name": "d3_lightgbm_controlled_main",
+    "base_config": "artifacts/5_4_density_conditioned_reliability/configs/LightGBM/density_reliability_controlled_main_lightgbm.json",
+    "runner": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/scripts/run_class_conditional_density_stratified_reliability.py",
+    "python_bin": "python3 (or $PYTHON_BIN, see run_all.sh)",
+    "derived_config": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/configs/d3_lightgbm_controlled_main.json",
+    "output_dir": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/results/LightGBM/density_reliability_controlled_main_lightgbm"
+  },
+  {
+    "name": "d3_rf_controlled_main",
+    "base_config": "artifacts/5_4_density_conditioned_reliability/configs/RF/density_reliability_controlled_main_random_forest.json",
+    "runner": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/scripts/run_class_conditional_density_stratified_reliability_with_rf.py",
+    "python_bin": "python3 (or $PYTHON_BIN, see run_all.sh)",
+    "derived_config": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/configs/d3_rf_controlled_main.json",
+    "output_dir": "artifacts/5_4_density_conditioned_reliability/sensitivity/class_conditional/results/RF/rf_full_wild_b"
+  }
+]

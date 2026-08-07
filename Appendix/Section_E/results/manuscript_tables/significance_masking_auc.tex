@@ -1,0 +1,26 @@
+\begin{table}[t]
+\centering
+\caption{Paired important-versus-random differences in raw AUC-point degradation under Wild (B), by model and feature group. Raw AUC-point degradation is $\mathrm{AUC}_{\mathrm{baseline}}-\mathrm{AUC}_{\mathrm{masked}}$, not normalized by baseline AUC or by the margin above chance; this differs from the normalized AUC degradation plotted in \autoref{fig:figure1_rq2_2_feature_dependent_decision_instability} in the main text. For each model--feature-group cell, we report the masking ratio (1\%, 5\%, or 10\%) that produced the largest -- i.e., least significant -- raw sign-flip $p$-value among the three tested ratios; its Holm-adjusted $p$-value is taken from the full ratio-level correction family (36 tests for LR/LightGBM/RF, 30 tests for MLP; \ref{app:significance}). Positive mean differences indicate greater AUC degradation under important masking than under random masking. Direction reports the number of seeds (out of 5) showing this positive pattern. The 95\% CI is a percentile bootstrap on the same five seed-level paired differences (10{,}000 resamples); see \ref{app:significance} for how it relates to the sign-flip $p$-value. This table provides a worst-case summary for readability; the accompanying repository retains the complete ratio-level results.}
+\label{tab:significance_masking_auc}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llcccccc}
+\toprule
+Model & Feature group & Ratio & Mean difference & 95\% CI & Direction & Raw $p$ & Holm $p$ \\
+\midrule
+ \multirow{2}{*}{LR} & Header & 1\% & +0.066 & [0.033, 0.086] & 5/5 & 0.031 & 1 \\
+  & Imports & 1\% & +0.038 & [0.031, 0.050] & 5/5 & 0.031 & 1 \\
+\midrule
+ \multirow{2}{*}{LightGBM} & Header & 1\% & +0.003 & [-0.001, 0.008] & 2/5 & 0.25 & 1 \\
+  & Imports & 1\% & +0.026 & [0.021, 0.030] & 5/5 & 0.031 & 1 \\
+\midrule
+ \multirow{2}{*}{RF} & Header & 1\% & +0.007 & [0.002, 0.012] & 3/5 & 0.125 & 1 \\
+  & Imports & 1\% & +0.005 & [0.001, 0.008] & 4/5 & 0.063 & 1 \\
+\midrule
+ \multirow{5}{*}{MLP} & All & 1\% & +0.113 & [0.051, 0.194] & 5/5 & 0.031 & 0.938 \\
+  & Header & 1\% & +0.008 & [-0.012, 0.030] & 2/5 & 0.281 & 0.938 \\
+  & Section & 1\% & +0.132 & [0.093, 0.174] & 5/5 & 0.031 & 0.938 \\
+  & Imports & 1\% & +0.019 & [0.013, 0.026] & 5/5 & 0.031 & 0.938 \\
+  & Strings & 10\% & +0.062 & [0.019, 0.099] & 4/5 & 0.063 & 0.938 \\
+\bottomrule
+\end{tabular}}
+\end{table}

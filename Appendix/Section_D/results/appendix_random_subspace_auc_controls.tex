@@ -1,0 +1,38 @@
+\begin{table}[t]
+\caption{Subset-minus-random AUC differences for dimensionality-matched controls.}
+\label{tab:appendix_ra_q4_auc}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+\textbf{Subset} & \textbf{Dimension} & \textbf{LR AUC difference} & \textbf{LightGBM AUC difference} \\
+\midrule
+\multirow{3}{*}{Header}
+ & 16 & $+0.132$ [$+0.102$, $+0.161$] & $+0.100$ [$+0.074$, $+0.126$] \\
+ & 32 & $+0.104$ [$+0.088$, $+0.119$] & $+0.042$ [$+0.034$, $+0.049$] \\
+ & 64 & $+0.073$ [$+0.065$, $+0.081$] & $+0.022$ [$+0.020$, $+0.025$] \\
+\midrule
+
+\multirow{3}{*}{Section}
+ & 16 & $-0.011$ [$-0.054$, $+0.032$] & $+0.046$ [$+0.026$, $+0.066$] \\
+ & 32 & $-0.002$ [$-0.020$, $+0.015$] & $+0.022$ [$+0.012$, $+0.032$] \\
+ & 64 & $-0.001$ [$-0.007$, $+0.004$] & $+0.015$ [$+0.013$, $+0.018$] \\
+\midrule
+
+\multirow{3}{*}{Imports}
+ & 16 & $-0.062$ [$-0.092$, $-0.032$] & $-0.118$ [$-0.146$, $-0.090$] \\
+ & 32 & $-0.086$ [$-0.106$, $-0.065$] & $-0.130$ [$-0.141$, $-0.123$] \\
+ & 64 & $-0.094$ [$-0.106$, $-0.081$] & $-0.113$ [$-0.119$, $-0.106$] \\
+\midrule
+
+\multirow{3}{*}{Strings}
+ & 16 & $+0.046$ [$+0.021$, $+0.069$] & $+0.093$ [$+0.070$, $+0.116$] \\
+ & 32 & $+0.024$ [$+0.009$, $+0.036$] & $+0.032$ [$+0.026$, $+0.037$] \\
+ & 64 & $+0.007$ [$-0.004$, $+0.018$] & $+0.011$ [$+0.009$, $+0.014$] \\
+\bottomrule
+\end{tabular}%
+}
+\textit{Note.} Brackets show 95\% percentile bootstrap confidence intervals.
+\end{table}

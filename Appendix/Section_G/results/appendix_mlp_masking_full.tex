@@ -1,0 +1,50 @@
+\begin{table}[t]
+\centering
+\caption{MLP important- and random-masking results on Wild (B), averaged across five seeds.}
+\label{tab:app_mlp_masking_full}
+
+\resizebox{0.9\columnwidth}{!}{%
+\begin{tabular}{llcccccc}
+\toprule
+& & \multicolumn{4}{c}{\textbf{Important masking}}
+& \multicolumn{2}{c}{\textbf{Random masking}} \\
+\cmidrule(lr){3-6}
+\cmidrule(lr){7-8}
+\textbf{Group} & \textbf{Ratio}
+& \textbf{AUC degradation} & \textbf{Flip rate}
+& \textbf{M$\rightarrow$B} & \textbf{B$\rightarrow$M}
+& \textbf{AUC degradation} & \textbf{Flip rate} \\
+\midrule
+
+\multirow{3}{*}{All}
+& 1\%  & 0.1132 & 0.3590 & 0.0006 & 0.3584 & 0.0001 & 0.0112 \\
+& 5\%  & 0.1257 & 0.3395 & 0.0160 & 0.3235 & 0.0028 & 0.0465 \\
+& 10\% & 0.1399 & 0.3024 & 0.0244 & 0.2780 & 0.0062 & 0.0724 \\
+\midrule
+
+\multirow{3}{*}{Header}
+& 1\%  & 0.0499 & 0.2426 & 0.0013 & 0.2413 & 0.0418 & 0.1290 \\
+& 5\%  & 0.0855 & 0.2897 & 0.2663 & 0.0234 & 0.0627 & 0.2349 \\
+& 10\% & 0.1930 & 0.3108 & 0.1066 & 0.2042 & 0.1069 & 0.2993 \\
+\midrule
+
+\multirow{3}{*}{Section}
+& 1\%  & 0.1408 & 0.2202 & 0.1631 & 0.0571 & 0.0089 & 0.0447 \\
+& 5\%  & 0.1976 & 0.2797 & 0.1511 & 0.1285 & 0.0149 & 0.0952 \\
+& 10\% & 0.2374 & 0.3636 & 0.1385 & 0.2252 & 0.0313 & 0.1333 \\
+\midrule
+
+\multirow{3}{*}{Imports}
+& 1\%  & 0.0183 & 0.0646 & 0.0608 & 0.0038 & $-0.0003$ & 0.0049 \\
+& 5\%  & 0.0416 & 0.1204 & 0.1155 & 0.0048 & 0.0046 & 0.0222 \\
+& 10\% & 0.0608 & 0.1562 & 0.1501 & 0.0061 & 0.0056 & 0.0317 \\
+\midrule
+
+\multirow{3}{*}{Strings}
+& 1\%  & 0.0922 & 0.3239 & 0.0008 & 0.3232 & 0.0040 & 0.0152 \\
+& 5\%  & 0.1987 & 0.5182 & 0.0000 & 0.5182 & 0.0268 & 0.1504 \\
+& 10\% & 0.1175 & 0.5293 & 0.0000 & 0.5293 & 0.0557 & 0.2210 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,5 @@
+split,class,total,unpacked,packed
+train,benign,1560000,1559986,14
+train,malicious,1560000,1446094,113906
+test,benign,360000,360000,0
+test,malicious,360000,331574,28426

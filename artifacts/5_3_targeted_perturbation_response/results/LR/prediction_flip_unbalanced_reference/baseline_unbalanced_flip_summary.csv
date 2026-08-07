@@ -1,0 +1,7 @@
+Subset,Strength,Flip Rate (Imp),Flip Rate (Rand)
+Header,1%,0.214,0.090
+Header,5%,0.292,0.236
+Header,10%,0.432,0.328
+Imports,1%,0.096,0.017
+Imports,5%,0.172,0.049
+Imports,10%,0.215,0.075

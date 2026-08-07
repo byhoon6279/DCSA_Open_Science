@@ -1,0 +1,47 @@
+\begin{table*}[t]
+\centering
+\caption{Model responses to hashed import-feature interventions for the Wild (B) view.}
+\label{tab:rq2_pe_import_validation}
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{lccccccccc}
+\toprule
+\textbf{Model} & \textbf{Intervention ratio}
+& \textbf{M$\rightarrow$B (Imp)}
+& \textbf{M$\rightarrow$B (Rand)}
+& \textbf{Mean malware-score change (Imp.)}
+& \textbf{Mean malware-score change (Rand)}
+& \textbf{AUC change (Imp)}
+& \textbf{AUC change (Rand)}
+& \textbf{Flip rate (Imp)}
+& \textbf{Flip rate (Rand)} \\
+\midrule
+
+\multirow{3}{*}{LR}
+& 1\%  & 0.024 & 0.008 &  0.062 & -0.001 &  0.027 & -0.001 & 0.152 & 0.022 \\
+& 5\%  & 0.071 & 0.032 & -0.028 & -0.015 & -0.006 & -0.014 & 0.154 & 0.068 \\
+& 10\% & 0.157 & 0.052 & -0.111 & -0.025 & -0.072 & -0.023 & 0.193 & 0.099 \\
+\midrule
+
+\multirow{3}{*}{LightGBM}
+& 1\%  & 0.069 & 0.003 & -0.048 & -0.001 &  0.013 &  0.000 & 0.166 & 0.008 \\
+& 5\%  & 0.279 & 0.014 & -0.189 & -0.008 & -0.081 &  0.001 & 0.284 & 0.036 \\
+& 10\% & 0.308 & 0.028 & -0.216 & -0.019 & -0.084 & -0.000 & 0.311 & 0.065 \\
+\midrule
+
+\multirow{3}{*}{RF}
+& 1\%  & 0.027 & 0.002 & -0.104 & -0.009 &  0.021 & 0.008 & 0.130 & 0.006 \\
+& 5\%  & 0.412 & 0.008 & -0.368 & -0.046 & -0.146 & 0.017 & 0.412 & 0.027 \\
+& 10\% & 0.505 & 0.019 & -0.404 & -0.086 & -0.178 & 0.018 & 0.505 & 0.053 \\
+
+\bottomrule
+\end{tabular}
+}
+\begin{minipage}{\linewidth}
+\footnotesize
+\textit{Note.} Imp.\ and Rand.\ denote interventions on importance-selected and randomly selected hashed import-feature dimensions, respectively.
+M$\rightarrow$B and flip rates are computed over the intervened malware samples, whereas AUC change is computed over the full evaluation set.
+We define AUC change as $\mathrm{AUC}_{\mathrm{modified}}-\mathrm{AUC}_{\mathrm{baseline}}$.
+Negative AUC changes indicate AUC degradation.
+\end{minipage}
+\end{table*}

@@ -1,0 +1,16 @@
+metric,subset,subset_label,mean_value,rank
+auc,all,All,0.9913790967291668,1
+auc,section,Section,0.9894418692291665,2
+auc,header,Header,0.9836406489791667,3
+auc,strings,Strings,0.9759835195416666,4
+auc,imports,Imports,0.9329210472916666,5
+mix_at_k,imports,Imports,0.1734469565972222,1
+mix_at_k,strings,Strings,0.10191649131944444,2
+mix_at_k,section,Section,0.08244601215277778,3
+mix_at_k,header,Header,0.0814902517361111,4
+mix_at_k,all,All,0.07978607812499999,5
+same_family_rate_at_k,section,Section,0.75978595228186,1
+same_family_rate_at_k,header,Header,0.757254271361306,2
+same_family_rate_at_k,all,All,0.7363754205445965,3
+same_family_rate_at_k,imports,Imports,0.695098232001228,4
+same_family_rate_at_k,strings,Strings,0.6565197449243966,5

@@ -1,0 +1,3 @@
+intervention,pooled_malware_to_benign_rate,high_density_malware_to_benign_rate,mid_density_malware_to_benign_rate,low_density_malware_to_benign_rate,delta_low_high,source_results_dir
+Important,0.308,0.165,0.386,0.410,+0.244,block3_probe_lightgbm_imports_parallel_merged
+Random,0.037,0.017,0.045,0.062,+0.046,block3_probe_lightgbm_imports_random_parallel_merged
