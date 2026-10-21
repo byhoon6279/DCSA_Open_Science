@@ -16,4 +16,7 @@ expected under `Data/` (not bundled); feature caches are written to
 Notes
 - The cleaned-validation values are a sensitivity analysis. They were not run through the
   other LightGBM analyses (Fig. 5-7, Tables D.1/E.x, Fig. 9 / Table 6) or RF.
-- No control isolating "duplicate removal" from "smaller validation set" was run.
+- A size-matched control (removing an equal number of nonduplicate validation records) and a
+  permutation-seed change were also run (manuscript §5.3). Both substantially altered the selected
+  import dimensions, so the 0.308 -> 0.160 difference cannot be attributed uniquely to duplicate
+  removal; these checks bound, but do not isolate, the effect.

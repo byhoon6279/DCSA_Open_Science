@@ -7,8 +7,8 @@ __pycache__/
 *.pyc
 
 # Raw EMBER2024 dataset
-Data/
-EMBER2024/
+/Data/
+/EMBER2024/
 
 # Large intermediate experiment outputs. Regenerable by rerunning the
 # corresponding bundled experiment script if ever needed.
