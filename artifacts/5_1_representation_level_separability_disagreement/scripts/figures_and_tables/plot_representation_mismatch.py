@@ -130,7 +130,7 @@ def save_auc_js_scatter(summary: Dict[str, Dict[str, Dict[str, float]]], out_pat
     ax.text(
         0.98,
         0.03,
-        "Bubble size: Mix@10\n(larger = higher local mixing)",
+        "Bubble size: Mean Mix@k\n(k = 5, 10, 15, 20)",
         transform=ax.transAxes,
         ha="right",
         va="bottom",

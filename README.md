@@ -1,8 +1,8 @@
 # Open Science Package
 
 This repository accompanies the manuscript *"DCSA: A Multi-View Reliability Audit for
-Static Malware Detectors,"* prepared for submission to the Journal of Information Security
-and Applications. It provides the code, configurations, intermediate results, and exported
+Static Malware Detectors,"* prepared for submission to the International Journal of
+Information Security. It provides the code, configurations, intermediate results, and exported
 figures and tables supporting the quantitative analyses reported in the manuscript.
 
 ## Layout
@@ -15,15 +15,15 @@ figure/table comes from which directory) and each `artifacts/5_1`-`5_5` section'
 ```
 artifacts/
   shared/                                                # common.py: shared feature/sample-loading library used by every section below
-  5_1_representation_level_separability_disagreement/   # Section 5.1 / Fig. 2-4, App. Fig. C.1
-  5_2_dimensionality_matched_subset_controls/            # Section 5.2, "Dimensionality-Matched Subset Controls" / Table 4, App. Table D.2-D.3
-  5_3_targeted_perturbation_response/                    # Section 5.3 / Fig. 5-7, Table 7, App. Fig. D.1, App. Table D.1
-  5_4_density_conditioned_reliability/                   # Section 5.4 / Fig. 8, Table 5
-  5_5_density_conditioned_fragility/                     # Section 5.5 / Fig. 9, Table 6, App. Fig. F.1
-  MLP/                                                   # Section 5.6, "Generalization to a Neural Classifier" / Table 8, App. Table G.1-G.4
+  5_1_representation_level_separability_disagreement/   # Section 5.1 / Table 1, Table 3, Fig. 2-4, Fig. 10
+  5_2_dimensionality_matched_subset_controls/            # Section 5.2, "Dimensionality-Matched Subset Controls" / Table 4, Table 12-13
+  5_3_targeted_perturbation_response/                    # Section 5.3 / Fig. 5-7, Table 7, Fig. 11, Table 11
+  5_4_density_conditioned_reliability/                   # Section 5.4 / Fig. 8, Table 5, Table 16
+  5_5_density_conditioned_fragility/                     # Section 5.5 / Fig. 9, Table 6, Fig. 12, Table 17
+  MLP/                                                   # Section 5.6, "Extension to a Neural Classifier" / Table 8, Table 18-21
 ```
-Appendix Tables E.1-E.2 (paired significance of masking effects) span LR,
-LightGBM, RF, and MLP together, not either section above; see `Appendix/Section_E/`.
+Tables 14-15 (paired significance of masking effects) span LR, LightGBM, RF, and MLP
+together, not either section above; see `Appendix/Section_E/`.
 
 The `5_1`, `5_3`, `5_4`, `5_5` section directories follow the same internal convention:
 `configs/`, `scripts/`, `data/`, `results/`, `figures/`, split by model family (`LR/`,
@@ -52,6 +52,59 @@ Appendix/
 
 The `Appendix/` directory contains scripts and derived outputs supporting the
 corresponding manuscript appendices where applicable.
+
+```
+Appendix/Supplement_SHA_duplicates/   # SHA-256 duplicate-record and validation-overlap sensitivity checks (see below)
+validation/                           # re-execution of the LightGBM hashed-import validation protocol (see below)
+```
+
+### Numbering used in the manuscript
+
+The manuscript numbers appendix tables and figures continuously (Table 10-21, Figure
+10-12) after the main text. Some section READMEs and `.tex` labels under `artifacts/`
+and `Appendix/` still use appendix-letter names (e.g. "Table D.2"). They map as follows:
+
+| Manuscript | Appendix-letter name | Content | Location |
+|---|---|---|---|
+| Table 10 | A.1 | Malware-family composition, Wild (U) / Unpacked (B) | `Appendix/Section_A/` |
+| Figure 10 | C.1 | UMAP projections of four feature representations | `Appendix/Section_C/` |
+| Table 11 | D.1 | Sensitivity of ΔMix@k to neighborhood size | `Appendix/Section_D/`, `artifacts/5_3.../` |
+| Table 12 | D.2 | Subset-minus-random AUC differences | `artifacts/5_2.../`, `Appendix/Section_D/` |
+| Table 13 | D.3 | Structure-level departures from random subspaces | `artifacts/5_2.../`, `Appendix/Section_D/` |
+| Figure 11 | D.1 (figure) | Masking collapse, Wild (U) / Unpacked (B) | `Appendix/Section_D/`, `artifacts/5_3.../` |
+| Table 14 | E.1 | Paired AUC-degradation tests | `Appendix/Section_E/` |
+| Table 15 | E.2 | Paired flip-rate tests | `Appendix/Section_E/` |
+| Figure 12 | F.1 (figure) | Density-conditioned flip rates | `Appendix/Section_F/`, `artifacts/5_5.../` |
+| Table 16 | F.1 (reliability) | Class-conditional reliability sensitivity | `Appendix/Section_F/` |
+| Table 17 | F.1 (masking) | Class-conditional masking sensitivity | `Appendix/Section_F/` |
+| Table 18 | G.1 | MLP representation-level results | `Appendix/Section_G/` |
+| Table 19 | G.2 | MLP important/random masking | `Appendix/Section_G/` |
+| Table 20 | G.3 | MLP density-conditioned reliability | `Appendix/Section_G/` |
+| Table 21 | G.4 | MLP density-conditioned masking amplification | `Appendix/Section_G/` |
+
+Main-text numbers (Table 1-9, Figure 1-9) are the same everywhere.
+
+### SHA-256 duplicates and validation overlap
+
+EMBER 2024 stores every SHA-256 twice within its weekly file, so the manuscript's counts
+(Table 1) are dataset records, not unique files. Two folders document the consequences
+referred to in Sections 4.5, 5.3, and 6.4 and Appendix F of the manuscript:
+
+- `validation/` re-executes the LightGBM hashed-import validation protocol. The 10%
+  important-feature M→B rate of 0.308 (Table 7) uses a label-stratified validation split
+  without SHA-group control, in which 84-99 validation rows per seed share a SHA-256 with
+  a training row. Re-deriving importance on a cleaned validation set gives 0.160 (random
+  control unchanged at ≈0.028). The manuscript treats this difference as not attributable
+  uniquely to duplicate removal, because changing the permutation seed or the
+  validation-set size also changes the selected dimensions.
+- `Appendix/Supplement_SHA_duplicates/` holds the earlier sensitivity runs: Mix@k,
+  silhouette and density-bin results with and without duplicate rows (main
+  feature-representation ordering preserved), and the cleaned-validation intervention.
+
+These are supplementary sensitivity analyses. They are not part of the generating pipeline
+for any main-text figure or table, and the `artifacts/` results are unchanged by them. Their
+scripts resolve all paths relative to the repository root and expect the raw EMBER 2024
+files under `Data/` (not bundled); the ~1.1 GB feature caches are rebuilt locally.
 
 ## Quick Start
 

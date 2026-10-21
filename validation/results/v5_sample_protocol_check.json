@@ -1,0 +1,599 @@
+{
+  "train_pool": {
+    "n_rows": 3120000,
+    "n_benign": 1560000,
+    "n_malware": 1560000,
+    "unique_sha_benign": 780000,
+    "unique_sha_malware": 780000,
+    "unique_sha_total": 1560000,
+    "copies_per_sha_distribution": {
+      "2": 1560000
+    },
+    "dup_sha_all_copies_in_same_week": 1560000,
+    "dup_sha_copies_across_weeks": 0
+  },
+  "test_weeks": [
+    {
+      "week": "2024-09-22_2024-09-28",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26675,
+          "dup_extra_rows": 13325
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26645,
+          "dup_extra_rows": 13355
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26698,
+          "dup_extra_rows": 13302
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26593,
+          "dup_extra_rows": 13407
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26709,
+          "dup_extra_rows": 13291
+        }
+      }
+    },
+    {
+      "week": "2024-09-29_2024-10-05",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26706,
+          "dup_extra_rows": 13294
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26721,
+          "dup_extra_rows": 13279
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26693,
+          "dup_extra_rows": 13307
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26582,
+          "dup_extra_rows": 13418
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26691,
+          "dup_extra_rows": 13309
+        }
+      }
+    },
+    {
+      "week": "2024-10-06_2024-10-12",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26737,
+          "dup_extra_rows": 13263
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26699,
+          "dup_extra_rows": 13301
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26751,
+          "dup_extra_rows": 13249
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26652,
+          "dup_extra_rows": 13348
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26676,
+          "dup_extra_rows": 13324
+        }
+      }
+    },
+    {
+      "week": "2024-10-13_2024-10-19",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26734,
+          "dup_extra_rows": 13266
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26652,
+          "dup_extra_rows": 13348
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26768,
+          "dup_extra_rows": 13232
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26698,
+          "dup_extra_rows": 13302
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26671,
+          "dup_extra_rows": 13329
+        }
+      }
+    },
+    {
+      "week": "2024-10-20_2024-10-26",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26638,
+          "dup_extra_rows": 13362
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26695,
+          "dup_extra_rows": 13305
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26668,
+          "dup_extra_rows": 13332
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26689,
+          "dup_extra_rows": 13311
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26678,
+          "dup_extra_rows": 13322
+        }
+      }
+    },
+    {
+      "week": "2024-10-27_2024-11-02",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26663,
+          "dup_extra_rows": 13337
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26627,
+          "dup_extra_rows": 13373
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26738,
+          "dup_extra_rows": 13262
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26700,
+          "dup_extra_rows": 13300
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26627,
+          "dup_extra_rows": 13373
+        }
+      }
+    },
+    {
+      "week": "2024-11-03_2024-11-09",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26657,
+          "dup_extra_rows": 13343
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26691,
+          "dup_extra_rows": 13309
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26573,
+          "dup_extra_rows": 13427
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26601,
+          "dup_extra_rows": 13399
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26630,
+          "dup_extra_rows": 13370
+        }
+      }
+    },
+    {
+      "week": "2024-11-10_2024-11-16",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26706,
+          "dup_extra_rows": 13294
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26632,
+          "dup_extra_rows": 13368
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26703,
+          "dup_extra_rows": 13297
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26619,
+          "dup_extra_rows": 13381
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26681,
+          "dup_extra_rows": 13319
+        }
+      }
+    },
+    {
+      "week": "2024-11-17_2024-11-23",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26638,
+          "dup_extra_rows": 13362
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26695,
+          "dup_extra_rows": 13305
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26626,
+          "dup_extra_rows": 13374
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26655,
+          "dup_extra_rows": 13345
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26687,
+          "dup_extra_rows": 13313
+        }
+      }
+    },
+    {
+      "week": "2024-11-24_2024-11-30",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26710,
+          "dup_extra_rows": 13290
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26680,
+          "dup_extra_rows": 13320
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26737,
+          "dup_extra_rows": 13263
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26695,
+          "dup_extra_rows": 13305
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26621,
+          "dup_extra_rows": 13379
+        }
+      }
+    },
+    {
+      "week": "2024-12-01_2024-12-07",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26676,
+          "dup_extra_rows": 13324
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26663,
+          "dup_extra_rows": 13337
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26638,
+          "dup_extra_rows": 13362
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26644,
+          "dup_extra_rows": 13356
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26638,
+          "dup_extra_rows": 13362
+        }
+      }
+    },
+    {
+      "week": "2024-12-08_2024-12-14",
+      "n_benign": 30000,
+      "n_malware": 30000,
+      "unique_sha_benign": 15000,
+      "unique_sha_malware": 15000,
+      "sampled_20k_per_class": {
+        "13": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26704,
+          "dup_extra_rows": 13296
+        },
+        "42": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26595,
+          "dup_extra_rows": 13405
+        },
+        "77": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26703,
+          "dup_extra_rows": 13297
+        },
+        "123": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26603,
+          "dup_extra_rows": 13397
+        },
+        "2024": {
+          "n": 40000,
+          "n_benign": 20000,
+          "n_malware": 20000,
+          "unique_sha": 26659,
+          "dup_extra_rows": 13341
+        }
+      }
+    }
+  ],
+  "test_total_unique_sha": 359994,
+  "train_test_sha_overlap": 0,
+  "seeds_lightgbm_protocol": {
+    "13": {
+      "n_balanced": 40000,
+      "n_benign": 20000,
+      "n_malware": 20000,
+      "n_train": 32000,
+      "n_val": 8000,
+      "val_rows_sha_in_train": 99,
+      "overlap_pairs_same_week_file": 99,
+      "overlap_pairs_different_week_file": 0
+    },
+    "42": {
+      "n_balanced": 40000,
+      "n_benign": 20000,
+      "n_malware": 20000,
+      "n_train": 32000,
+      "n_val": 8000,
+      "val_rows_sha_in_train": 85,
+      "overlap_pairs_same_week_file": 85,
+      "overlap_pairs_different_week_file": 0
+    },
+    "77": {
+      "n_balanced": 40000,
+      "n_benign": 20000,
+      "n_malware": 20000,
+      "n_train": 32000,
+      "n_val": 8000,
+      "val_rows_sha_in_train": 92,
+      "overlap_pairs_same_week_file": 92,
+      "overlap_pairs_different_week_file": 0
+    },
+    "123": {
+      "n_balanced": 40000,
+      "n_benign": 20000,
+      "n_malware": 20000,
+      "n_train": 32000,
+      "n_val": 8000,
+      "val_rows_sha_in_train": 98,
+      "overlap_pairs_same_week_file": 98,
+      "overlap_pairs_different_week_file": 0
+    },
+    "2024": {
+      "n_balanced": 40000,
+      "n_benign": 20000,
+      "n_malware": 20000,
+      "n_train": 32000,
+      "n_val": 8000,
+      "val_rows_sha_in_train": 84,
+      "overlap_pairs_same_week_file": 84,
+      "overlap_pairs_different_week_file": 0
+    }
+  }
+}

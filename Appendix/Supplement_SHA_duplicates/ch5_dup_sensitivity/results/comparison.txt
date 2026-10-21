@@ -1,0 +1,133 @@
+
+## 5.1 reproduction (dup vs DCSA), Mix@k
+      group   k  n_cells  max_abs_diff  mean_ours  mean_dcsa
+0       all   5       60        0.0000     0.0496     0.0496
+1       all  10       60        0.0000     0.0667     0.0667
+2       all  15       60        0.0000     0.0765     0.0765
+3       all  20       60        0.0000     0.0838     0.0838
+4    header   5       60        0.0003     0.0529     0.0528
+5    header  10       60        0.0002     0.0694     0.0694
+6    header  15       60        0.0002     0.0787     0.0786
+7    header  20       60        0.0001     0.0856     0.0856
+8   section   5       60        0.0001     0.0518     0.0518
+9   section  10       60        0.0001     0.0692     0.0692
+10  section  15       60        0.0001     0.0793     0.0793
+11  section  20       60        0.0001     0.0868     0.0868
+12  strings   5       60        0.0001     0.0655     0.0655
+13  strings  10       60        0.0001     0.0872     0.0872
+14  strings  15       60        0.0000     0.0989     0.0989
+15  strings  20       60        0.0001     0.1072     0.1072
+16  imports   5       60        0.0815     0.1442     0.1461
+17  imports  10       60        0.0606     0.1608     0.1573
+18  imports  15       60        0.0403     0.1692     0.1672
+19  imports  20       60        0.0327     0.1767     0.1746
+
+## 5.1 reproduction (dup vs DCSA silhouette run)
+     group  n_cells  max_abs_diff  mean_ours  mean_dcsa
+0      all       60           0.0     0.0392     0.0392
+1   header       60           0.0     0.1173     0.1173
+2  section       60           0.0     0.0738     0.0738
+3  strings       60           0.0     0.0506     0.0506
+4  imports       60           0.0     0.0356     0.0356
+
+## 5.1 dup vs dedup (12 weeks x 5 seeds)
+         mix_at_10_dup  mix_at_10_dedup  mix_at_10_abs  mix_at_10_rel%  mix_ta_at_10_dup  mix_ta_at_10_dedup  mix_ta_at_10_abs  mix_ta_at_10_rel%  silhouette_dup  silhouette_dedup  silhouette_abs  silhouette_rel%  mix_kavg_dup(Table3 def)  mix_kavg_dedup
+group                                                                                                                                                                                                                                                         
+all             0.0667           0.0893         0.0226         33.9569            0.0667              0.0893            0.0226            33.9557          0.0392            0.0392            -0.0          -0.0786                    0.0691          0.0925
+header          0.0694           0.0910         0.0216         31.2047            0.0695              0.0911            0.0217            31.1741          0.1173            0.1173            -0.0          -0.0245                    0.0716          0.0936
+section         0.0692           0.0924         0.0233         33.6380            0.0692              0.0925            0.0233            33.6356          0.0738            0.0738            -0.0          -0.0323                    0.0718          0.0955
+strings         0.0872           0.1140         0.0268         30.7344            0.0872              0.1140            0.0268            30.7337          0.0506            0.0506            -0.0          -0.0598                    0.0897          0.1167
+imports         0.1608           0.1806         0.0198         12.3129            0.1583              0.1806            0.0223            14.0756          0.0356            0.0356            -0.0          -0.0785                    0.1627          0.1839
+
+## 5.1 group ordering
+                                                                     0
+Mix@10 dup (low->high)      all < section < header < strings < imports
+Mix@10 dedup                all < header < section < strings < imports
+Mix@10 tie-avg dup          all < section < header < strings < imports
+Mix@10 tie-avg dedup        all < header < section < strings < imports
+Mix k-avg dup               all < header < section < strings < imports
+Mix k-avg dedup             all < header < section < strings < imports
+Silhouette dup (high->low)  header > section > strings > all > imports
+Silhouette dedup            header > section > strings > all > imports
+
+## 5.1 mix_at_10 rank per (seed, week) cell (1 = least mixed)
+     group  mean_rank_dup  mean_rank_dedup  cells_rank_changed  n_cells
+0      all           1.15           1.1750                   2       60
+1   header           2.50           2.0583                  22       60
+2  section           2.35           2.7667                  20       60
+3  strings           4.00           4.0000                   0       60
+4  imports           5.00           5.0000                   0       60
+
+## 5.1 mix_ta_at_10 rank per (seed, week) cell (1 = least mixed)
+     group  mean_rank_dup  mean_rank_dedup  cells_rank_changed  n_cells
+0      all         1.0833           1.1667                   5       60
+1   header         2.5833           2.0833                  25       60
+2  section         2.3333           2.7500                  20       60
+3  strings         4.0000           4.0000                   0       60
+4  imports         5.0000           5.0000                   0       60
+
+## 5.4 reproduction (dup vs DCSA metric_rows, per seed x bin)
+         max_abs_diff_mix  n_samples_match
+group                                     
+all                0.0000            False
+header             0.0006            False
+imports            0.1378            False
+section            0.0001            False
+strings            0.0002            False
+
+## 5.4 mix_at_10 by density bin (mean of 5 seeds)
+density_bin    high_density  mid_density  low_density  low-high
+group   cond                                                   
+all     dedup           NaN          NaN          NaN       NaN
+        dup          0.0135       0.0432       0.0839    0.0704
+header  dedup           NaN          NaN          NaN       NaN
+        dup          0.0196       0.0495       0.0844    0.0648
+imports dedup           NaN          NaN          NaN       NaN
+        dup          0.2174       0.1405       0.1295   -0.0879
+section dedup           NaN          NaN          NaN       NaN
+        dup          0.0200       0.0452       0.0745    0.0545
+strings dedup           NaN          NaN          NaN       NaN
+        dup          0.0158       0.0619       0.1101    0.0944
+
+## 5.4 mix_at_10 direction counts over 5 seeds
+density_bin   low>high  monotone low>mid>high
+group   cond                                 
+all     dup          5                      5
+header  dup          5                      5
+imports dup          0                      0
+section dup          5                      5
+strings dup          5                      5
+
+## 5.4 mix_ta_at_10 by density bin (mean of 5 seeds)
+density_bin    high_density  mid_density  low_density  low-high
+group   cond                                                   
+all     dedup        0.0160       0.0521       0.1018    0.0858
+        dup          0.0135       0.0432       0.0839    0.0704
+header  dedup        0.0226       0.0590       0.1004    0.0779
+        dup          0.0201       0.0497       0.0845    0.0645
+imports dedup        0.1642       0.1464       0.1544   -0.0099
+        dup          0.1640       0.1391       0.1329   -0.0312
+section dedup        0.0237       0.0547       0.0905    0.0668
+        dup          0.0201       0.0453       0.0745    0.0543
+strings dedup        0.0186       0.0744       0.1324    0.1138
+        dup          0.0158       0.0619       0.1101    0.0943
+
+## 5.4 mix_ta_at_10 direction counts over 5 seeds
+density_bin    low>high  monotone low>mid>high
+group   cond                                  
+all     dedup         5                      5
+        dup           5                      5
+header  dedup         5                      5
+        dup           5                      5
+imports dedup         0                      0
+        dup           0                      0
+section dedup         5                      5
+        dup           5                      5
+strings dedup         5                      5
+        dup           5                      5
+
+## 5.4 sample sizes
+          n_test  n_train
+cond                     
+dedup  1600207.0  39741.8
+dup    2400000.0  40000.0

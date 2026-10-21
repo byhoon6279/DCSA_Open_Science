@@ -14,3 +14,10 @@ EMBER2024/
 # corresponding bundled experiment script if ever needed.
 **/importance_reports/seed_*_imports_token_importance.csv
 **/density_rows.csv
+
+# Rebuildable feature caches of the SHA-duplicate checks
+**/supplementary_val_dedup/cache/
+**/ch5_dup_sensitivity/cache/
+
+# In-progress post-hoc re-run, not referenced by the manuscript
+Appendix/Supplement_SHA_duplicates/posthoc_val_dedup/

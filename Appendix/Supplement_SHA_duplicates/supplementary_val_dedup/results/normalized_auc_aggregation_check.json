@@ -1,0 +1,174 @@
+{
+  "method_note": "CORRECTED = per-row normalized_drop = max(0,-delta_auc)/max(baseline_auc-0.5,1e-8), averaged over 12 weeks per seed, then averaged over 5 seeds -- matches DCSA's seed_level_normalized_drops() exactly for the important arm (verified against raw trial_results.csv for A; exact recomputation, not an approximation, since 'important' has exactly 1 trial per seed-week so there is no repeat-trial-averaging ambiguity).",
+  "random_arm_caveat": "This script only recomputes the 'important' arm exactly. The 'random' arm's correct procedure averages the per-row normalized_drop across the 20 repeat trials WITHIN each seed-week before further averaging; this workspace's step2 output only stored the already-trial-averaged delta_auc per seed-week (not the 20 individual trial deltas), so an exactly matching recomputation for 'random' is not possible from currently saved data without re-running step2 to persist per-trial rows.",
+  "results": [
+    {
+      "group": "header",
+      "strength": 0.01,
+      "A_seed_vals": {
+        "13": 0.000163,
+        "42": 0.000712,
+        "77": 0.000326,
+        "123": 0.021551,
+        "2024": 0.024015
+      },
+      "A_mean": 0.009353561514666427,
+      "B_seed_vals": {
+        "13": 0.000163,
+        "42": 0.000712,
+        "77": 0.000326,
+        "123": 0.021551,
+        "2024": 0.024015
+      },
+      "B_mean": 0.009353561514666483,
+      "C_seed_vals": {
+        "13": 0.012965,
+        "42": 0.000712,
+        "77": 0.000326,
+        "123": 0.021551,
+        "2024": 0.024015
+      },
+      "C_mean": 0.011913850636824019
+    },
+    {
+      "group": "header",
+      "strength": 0.05,
+      "A_seed_vals": {
+        "13": 0.061243,
+        "42": 0.09611,
+        "77": 0.109497,
+        "123": 0.09204,
+        "2024": 0.10005
+      },
+      "A_mean": 0.09178807509655601,
+      "B_seed_vals": {
+        "13": 0.061243,
+        "42": 0.09611,
+        "77": 0.109497,
+        "123": 0.09204,
+        "2024": 0.10005
+      },
+      "B_mean": 0.09178807509655607,
+      "C_seed_vals": {
+        "13": 0.061243,
+        "42": 0.09611,
+        "77": 0.109497,
+        "123": 0.09204,
+        "2024": 0.10005
+      },
+      "C_mean": 0.09178807509655607
+    },
+    {
+      "group": "header",
+      "strength": 0.1,
+      "A_seed_vals": {
+        "13": 0.205804,
+        "42": 0.138647,
+        "77": 0.199752,
+        "123": 0.168655,
+        "2024": 0.124488
+      },
+      "A_mean": 0.16746899089011608,
+      "B_seed_vals": {
+        "13": 0.205804,
+        "42": 0.138647,
+        "77": 0.199752,
+        "123": 0.168655,
+        "2024": 0.124488
+      },
+      "B_mean": 0.16746899089011616,
+      "C_seed_vals": {
+        "13": 0.205804,
+        "42": 0.138647,
+        "77": 0.199752,
+        "123": 0.168655,
+        "2024": 0.124488
+      },
+      "C_mean": 0.16746899089011616
+    },
+    {
+      "group": "imports",
+      "strength": 0.01,
+      "A_seed_vals": {
+        "13": 0.075875,
+        "42": 0.050374,
+        "77": 0.054215,
+        "123": 0.048885,
+        "2024": 0.076297
+      },
+      "A_mean": 0.06112918006351766,
+      "B_seed_vals": {
+        "13": 0.075875,
+        "42": 0.050374,
+        "77": 0.054215,
+        "123": 0.048885,
+        "2024": 0.076297
+      },
+      "B_mean": 0.06112918006351777,
+      "C_seed_vals": {
+        "13": 0.061847,
+        "42": 0.068019,
+        "77": 0.068053,
+        "123": 0.06477,
+        "2024": 0.079378
+      },
+      "C_mean": 0.06841328235947727
+    },
+    {
+      "group": "imports",
+      "strength": 0.05,
+      "A_seed_vals": {
+        "13": 0.182135,
+        "42": 0.113717,
+        "77": 0.13184,
+        "123": 0.124196,
+        "2024": 0.141698
+      },
+      "A_mean": 0.13871710731351236,
+      "B_seed_vals": {
+        "13": 0.182135,
+        "42": 0.113717,
+        "77": 0.13184,
+        "123": 0.124196,
+        "2024": 0.141698
+      },
+      "B_mean": 0.13871710731351244,
+      "C_seed_vals": {
+        "13": 0.268255,
+        "42": 0.210181,
+        "77": 0.137931,
+        "123": 0.13486,
+        "2024": 0.187328
+      },
+      "C_mean": 0.18771109767919178
+    },
+    {
+      "group": "imports",
+      "strength": 0.1,
+      "A_seed_vals": {
+        "13": 0.317521,
+        "42": 0.160203,
+        "77": 0.178232,
+        "123": 0.207513,
+        "2024": 0.214884
+      },
+      "A_mean": 0.2156704983298477,
+      "B_seed_vals": {
+        "13": 0.317521,
+        "42": 0.160203,
+        "77": 0.178232,
+        "123": 0.207513,
+        "2024": 0.214884
+      },
+      "B_mean": 0.21567049832984772,
+      "C_seed_vals": {
+        "13": 0.739666,
+        "42": 0.305984,
+        "77": 0.169022,
+        "123": 0.250515,
+        "2024": 0.33801
+      },
+      "C_mean": 0.36063917910270643
+    }
+  ]
+}

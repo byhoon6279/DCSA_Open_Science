@@ -1,0 +1,59 @@
+{
+  "source_config": "DCSA_Open_Science/artifacts/5_3_targeted_perturbation_response/configs/LightGBM/feature_perturbation_lightgbm_balanced_main.json",
+  "source_config_pe_intervention": "DCSA_Open_Science/artifacts/5_3_targeted_perturbation_response/pe_inspired_feature_intervention/configs/pe_intervention_balanced_main.json",
+  "platform": "Win32",
+  "packer_filter": "all",
+  "n_train_weeks": 52,
+  "n_test_weeks": 12,
+  "seeds": [13, 42, 77, 123, 2024],
+  "feature_groups_in_scope": ["header", "imports"],
+  "feature_groups_out_of_scope": ["section", "strings", "all"],
+  "importance_method": "permutation (LightGBM only; LR coefficient-based importance out of scope per user instruction)",
+  "model_type": "lightgbm",
+  "lightgbm_hyperparameters": {
+    "objective": "binary",
+    "class_weight": "balanced",
+    "n_estimators": 300,
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "random_state": "= seed",
+    "n_jobs": 2,
+    "verbosity": -1
+  },
+  "max_train_per_class": 20000,
+  "max_test_per_class": 20000,
+  "validation_fraction": 0.2,
+  "permutation_repeats": 3,
+  "perturbation_strengths": [0.01, 0.05, 0.1],
+  "random_trials": 20,
+  "decision_threshold": 0.5,
+  "hashed_import_intervention": {
+    "operator": "imports_benign_mass_injection",
+    "selection_ratio": 0.10,
+    "clamp_range": "[q75, q95] of BENIGN rows in the 80% train partition (raw, unscaled features)",
+    "applied_to": "malware rows only, in the 12 evaluation test weeks"
+  },
+  "library_versions_used_in_this_reproduction": {
+    "python_note": "system python3 (see requirements check below)",
+    "lightgbm": "4.7.0",
+    "scikit-learn": "1.9.0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5"
+  },
+  "library_versions_pinned_by_original_DCSA_package": {
+    "lightgbm": "4.6.0",
+    "scikit-learn": "1.7.2",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pandas": "not pinned in artifacts/requirements.txt"
+  },
+  "reproduction_fidelity_note": "Library versions differ from the original DCSA_Open_Science execution environment (see above). Empirically, this reproduction's 'original validation split' condition (B) matched the published results (A) to floating-point precision on every baseline AUC, masking AUC-degradation, flip-rate, and Table 5-5 hashed-import-intervention number checked -- see results/final_comparison.json, B_minus_A columns (~1e-17, i.e. exact match up to floating-point noise). The version differences did not introduce a measurable reproduction gap in this case.",
+  "raw_dataset_source": "Data/ (EMBER2024 raw feature jsonl files; read-only; not part of this repository)",
+  "not_modified": [
+    "DCSA_Open_Science (entire repository, read-only reference only)",
+    "EMBER2024 raw dataset (read-only)"
+  ],
+  "all_outputs_written_to": "Appendix/Supplement_SHA_duplicates/supplementary_val_dedup/ (this workspace only)"
+}

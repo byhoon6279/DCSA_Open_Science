@@ -1,0 +1,18 @@
+{
+  "n_train_weeks_in_config": 52,
+  "n_test_weeks_in_config": 12,
+  "n_train_files_read": 52,
+  "n_test_files_read": 12,
+  "n_total_distinct_input_files": 64,
+  "n_cache_files_built": 64,
+  "n_cache_glob_raw_including_macos_appledouble_shadow_files": 128,
+  "raw_files_missing": [],
+  "cache_files_missing": [],
+  "duplicate_weeks_in_train_config": [],
+  "duplicate_weeks_in_test_config": [],
+  "first_train_week": "2023-09-24_2023-09-30",
+  "last_train_week": "2024-09-15_2024-09-21",
+  "read_order_note": "This reproduction's data_pool.load_pool() iterates config['train_weeks'] in list order (identical to DCSA's week_paths(data_root, platform, train_weeks, 'train') + load_samples_from_paths(), which appends files in that same list order and preserves within-file row order). No filesystem glob or sort-by-name is used anywhere in this reproduction, so file read order is guaranteed identical to the original pipeline given the same config file.",
+  "cache_dir_appledouble_note": "The external drive surfaces one macOS AppleDouble shadow file ('._<name>.npz', zero-length metadata, not real data) per real cache file, so a naive glob('*.npz') count is exactly double the real file count. n_cache_files_built above already excludes these; load_week() in data_pool.py opens files by exact name, never by glob, so this artifact cannot affect which data is actually loaded.",
+  "51_vs_52_note": "The config's train_weeks list contains exactly 52 distinct ISO weeks (2023-09-24_2023-09-30 through 2024-09-15_2024-09-21), matching the thesis text ('52주 학습 기간'). Any '51-week' phrasing elsewhere was a manual miscount during exploration, not a property of the config, code, or cached data -- confirmed here by directly counting config['train_weeks'] and the on-disk file list, independent of any prior narration."
+}
