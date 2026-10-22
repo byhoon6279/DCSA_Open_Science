@@ -1,0 +1,21 @@
+{
+  "analysis_id": "figure2_canonical_v1",
+  "data_root": "/Volumes/SSD_2TB/GitHub/overlap_separability/EMBER2024/dataset/features",
+  "common_module": "/Volumes/SSD_2TB/GitHub/overlap_separability/RQ1/common.py",
+  "protocol_config": "/Volumes/SSD_2TB/GitHub/Beyond_AUC_journal/5_1_representation_level_separability_disagreement/configs/LR/family_aligned_rq1_matched.json",
+  "output_dir": "/Volumes/SSD_2TB/GitHub/Beyond_AUC_journal/figure2_canonical_reanalysis/results/canonical_v1",
+  "views": {
+    "wild_b": "all",
+    "unpacked_b": "unpacked"
+  },
+  "models": [
+    "lr",
+    "lightgbm",
+    "rf"
+  ],
+  "k_values": [5, 10, 15, 20],
+  "figure_k": 10,
+  "lightgbm_n_jobs": 6,
+  "rf_n_jobs": 6,
+  "rf_n_estimators": 500
+}

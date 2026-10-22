@@ -1,8 +1,8 @@
 """
-Answers the reviewer question: does this reproduction read the same training
+Checks whether this reproduction reads the same training
 input files, in the same order, as the original DCSA run -- and how many
-distinct weeks/files does "training data" actually mean (51 vs 52 came up as
-a wording inconsistency; this checks the number in the config/code, not prose).
+distinct weeks/files "training data" actually means (this checks the number in
+the config/code, not prose).
 """
 import hashlib
 import json
@@ -63,13 +63,11 @@ report = {
         "in data_pool.py opens files by exact name, never by glob, so this "
         "artifact cannot affect which data is actually loaded."
     ),
-    "51_vs_52_note": (
+    "train_weeks_count_note": (
         "The config's train_weeks list contains exactly 52 distinct ISO weeks "
         "(2023-09-24_2023-09-30 through 2024-09-15_2024-09-21), matching the "
-        "thesis text ('52주 학습 기간'). Any '51-week' phrasing elsewhere was a "
-        "manual miscount during exploration, not a property of the config, code, "
-        "or cached data -- confirmed here by directly counting config['train_weeks'] "
-        "and the on-disk file list, independent of any prior narration."
+        "manuscript text ('52 weekly files'), confirmed here by directly counting "
+        "config['train_weeks'] and the on-disk file list."
     ),
 }
 

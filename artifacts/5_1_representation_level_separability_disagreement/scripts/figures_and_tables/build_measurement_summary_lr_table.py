@@ -4,6 +4,8 @@
 
 This script reads the already-bundled `table_rq1_measurement_summary.csv`
 and emits the plain LR-only table that the manuscript's Table 3 reports
+(columns: AUC, Mean Mix@k, Silhouette, JS; Mean Mix@k is Mix@k averaged over
+k in {5, 10, 15, 20}, computed with explicit self-exclusion in the kNN search)
 (a separate wider LR+RF variant, `\\label{tab:measurement_summary_with_rf}`,
 is a different table not cited by the manuscript and is not built here).
 """
@@ -30,25 +32,31 @@ def read_rows(path: Path) -> dict[str, dict[str, str]]:
 
 def build_tex(rows: dict[str, dict[str, str]]) -> str:
     lines = [
-        r"\begin{center}",
-        r"\captionsetup{type=table}",
-        r"\captionof{table}{Measurement summary across feature subsets under Wild (B) for LR.",
-        r"Decision-level and structural metrics produce inconsistent subset rankings.}",
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\caption{Measurement summary across feature subsets under Wild (B) for LR.",
+        r"Decision-level and structural metrics produce inconsistent subset rankings.",
+        r"Mean Mix@$k$ averages Mix@$k$ over $k \in \{5,10,15,20\}$.}",
         r"\label{tab:measurement_summary}",
         r"\scriptsize",
-        r"\begin{tabular}{lcccc}",
+        r"\setlength{\tabcolsep}{4pt}",
+        r"\begin{tabular}{@{}lcccc@{}}",
         r"\toprule",
-        r"\textbf{Feature subset} & \textbf{AUC} & \textbf{Mix@10} & \textbf{Silhouette} & \textbf{JS} \\",
+        r"\textbf{Feature subset}",
+        r"& \textbf{AUC}",
+        r"& \makecell{\textbf{Mean}\\\textbf{Mix@$k$}}",
+        r"& \textbf{Silhouette}",
+        r"& \textbf{JS} \\",
         r"\midrule",
     ]
     for feature in FEATURE_ORDER:
         row = rows[feature]
         label = f"{FEATURE_LABELS[feature]:<7}"
         lines.append(
-            f"{label} & {float(row['auc']):.4f} & {float(row['mix_at_10']):.4f} "
+            f"{label} & {float(row['auc']):.4f} & {float(row['mean_mix_at_k']):.4f} "
             f"& {float(row['silhouette']):.4f} & {float(row['js_divergence']):.4f} \\\\"
         )
-    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{center}"])
+    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
     return "\n".join(lines) + "\n"
 
 

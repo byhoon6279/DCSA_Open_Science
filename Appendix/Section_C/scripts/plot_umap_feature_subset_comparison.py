@@ -214,7 +214,7 @@ def add_metric_box(
             [
                 f"LR AUC: {payload['lr_auc']:.3f}",
                 f"LGBM AUC: {payload['lgbm_auc']:.3f}",
-                f"Mix@10: {payload['mix_at_k']:.3f}",
+                f"Mean Mix: {payload['mix_at_k']:.3f}",
                 f"JS: {payload['js_divergence']:.3f}",
             ]
         )
@@ -222,7 +222,7 @@ def add_metric_box(
         text = "\n".join(
             [
                 f"AUC: {payload['lr_auc']:.3f}",
-                f"Mix@10: {payload['mix_at_k']:.3f}",
+                f"Mean Mix: {payload['mix_at_k']:.3f}",
                 f"JS: {payload['js_divergence']:.3f}",
             ]
         )
@@ -230,7 +230,7 @@ def add_metric_box(
         text = "\n".join(
             [
                 f"AUC: {payload['lgbm_auc']:.3f}",
-                f"Mix@10: {payload['mix_at_k']:.3f}",
+                f"Mean Mix: {payload['mix_at_k']:.3f}",
                 f"JS: {payload['js_divergence']:.3f}",
             ]
         )
@@ -238,7 +238,7 @@ def add_metric_box(
         text = "\n".join(
             [
                 f"AUC: {payload['lr_auc']:.3f}",
-                f"Mix@10: {payload['mix_at_k']:.3f}",
+                f"Mean Mix: {payload['mix_at_k']:.3f}",
                 f"JS: {payload['js_divergence']:.3f}",
             ]
         )

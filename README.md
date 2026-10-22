@@ -17,9 +17,9 @@ artifacts/
   shared/                                                # common.py: shared feature/sample-loading library used by every section below
   5_1_representation_level_separability_disagreement/   # Section 5.1 / Table 1, Table 3, Fig. 2-4, Fig. 10
   5_2_dimensionality_matched_subset_controls/            # Section 5.2, "Dimensionality-Matched Subset Controls" / Table 4, Table 12-13
-  5_3_targeted_perturbation_response/                    # Section 5.3 / Fig. 5-7, Table 7, Fig. 11, Table 11
-  5_4_density_conditioned_reliability/                   # Section 5.4 / Fig. 8, Table 5, Table 16
-  5_5_density_conditioned_fragility/                     # Section 5.5 / Fig. 9, Table 6, Fig. 12, Table 17
+  5_3_targeted_perturbation_response/                    # Section 5.3 / Fig. 5-7, Table 5, Fig. 11, Table 11
+  5_4_density_conditioned_reliability/                   # Section 5.4 / Fig. 8, Table 6, Table 16
+  5_5_density_conditioned_fragility/                     # Section 5.5 / Fig. 9, Table 7, Fig. 12, Table 17
   MLP/                                                   # Section 5.6, "Extension to a Neural Classifier" / Table 8, Table 18-21
 ```
 Tables 14-15 (paired significance of masking effects) span LR, LightGBM, RF, and MLP
@@ -62,25 +62,26 @@ validation/                           # re-execution of the LightGBM hashed-impo
 
 The manuscript numbers appendix tables and figures continuously (Table 10-21, Figure
 10-12) after the main text. Some section READMEs and `.tex` labels under `artifacts/`
-and `Appendix/` still use appendix-letter names (e.g. "Table D.2"). They map as follows:
+and `Appendix/` still use appendix-letter names (e.g. "Table D.2"). They map as follows
+(the "Manuscript section" column gives where the item sits in the current manuscript):
 
-| Manuscript | Appendix-letter name | Content | Location |
-|---|---|---|---|
-| Table 10 | A.1 | Malware-family composition, Wild (U) / Unpacked (B) | `Appendix/Section_A/` |
-| Figure 10 | C.1 | UMAP projections of four feature representations | `Appendix/Section_C/` |
-| Table 11 | D.1 | Sensitivity of ΔMix@k to neighborhood size | `Appendix/Section_D/`, `artifacts/5_3.../` |
-| Table 12 | D.2 | Subset-minus-random AUC differences | `artifacts/5_2.../`, `Appendix/Section_D/` |
-| Table 13 | D.3 | Structure-level departures from random subspaces | `artifacts/5_2.../`, `Appendix/Section_D/` |
-| Figure 11 | D.1 (figure) | Masking collapse, Wild (U) / Unpacked (B) | `Appendix/Section_D/`, `artifacts/5_3.../` |
-| Table 14 | E.1 | Paired AUC-degradation tests | `Appendix/Section_E/` |
-| Table 15 | E.2 | Paired flip-rate tests | `Appendix/Section_E/` |
-| Figure 12 | F.1 (figure) | Density-conditioned flip rates | `Appendix/Section_F/`, `artifacts/5_5.../` |
-| Table 16 | F.1 (reliability) | Class-conditional reliability sensitivity | `Appendix/Section_F/` |
-| Table 17 | F.1 (masking) | Class-conditional masking sensitivity | `Appendix/Section_F/` |
-| Table 18 | G.1 | MLP representation-level results | `Appendix/Section_G/` |
-| Table 19 | G.2 | MLP important/random masking | `Appendix/Section_G/` |
-| Table 20 | G.3 | MLP density-conditioned reliability | `Appendix/Section_G/` |
-| Table 21 | G.4 | MLP density-conditioned masking amplification | `Appendix/Section_G/` |
+| Manuscript | Appendix-letter name | Manuscript section | Content | Location |
+|---|---|---|---|---|
+| Table 10 | A.1 | A | Malware-family composition, Wild (U) / Unpacked (B) | `Appendix/Section_A/` |
+| Figure 10 | C.1 | C.1 | UMAP projections of four feature representations | `Appendix/Section_C/` |
+| Table 11 | D.1 | D.1 | Sensitivity of ΔMix@k to neighborhood size | `Appendix/Section_D/`, `artifacts/5_3.../` |
+| Table 12 | D.2 | D.2 | Subset-minus-random AUC differences | `artifacts/5_2.../`, `Appendix/Section_D/` |
+| Table 13 | D.3 | D.2 | Structure-level departures from random subspaces | `artifacts/5_2.../`, `Appendix/Section_D/` |
+| Figure 11 | D.1 (figure) | D.3 | Masking collapse, Wild (U) / Unpacked (B) | `Appendix/Section_D/`, `artifacts/5_3.../` |
+| Table 14 | E.1 | E | Paired AUC-degradation tests | `Appendix/Section_E/` |
+| Table 15 | E.2 | E | Paired flip-rate tests | `Appendix/Section_E/` |
+| Figure 12 | F.1 (figure) | F.1 | Density-conditioned flip rates | `Appendix/Section_F/`, `artifacts/5_5.../` |
+| Table 16 | F.1 (reliability) | F.1 | Class-conditional reliability sensitivity | `Appendix/Section_F/` |
+| Table 17 | F.1 (masking) | F.1 | Class-conditional masking sensitivity | `Appendix/Section_F/` |
+| Table 18 | G.1 | G.2 | MLP representation-level results | `Appendix/Section_G/` |
+| Table 19 | G.2 | G.3 | MLP important/random masking | `Appendix/Section_G/` |
+| Table 20 | G.3 | G.4 | MLP density-conditioned reliability | `Appendix/Section_G/` |
+| Table 21 | G.4 | G.5 | MLP density-conditioned masking amplification | `Appendix/Section_G/` |
 
 Main-text numbers (Table 1-9, Figure 1-9) are the same everywhere.
 
@@ -91,7 +92,7 @@ EMBER 2024 stores every SHA-256 twice within its weekly file, so the manuscript'
 referred to in Sections 4.5, 5.3, and 6.4 and Appendix F of the manuscript:
 
 - `validation/` re-executes the LightGBM hashed-import validation protocol. The 10%
-  important-feature M→B rate of 0.308 (Table 7) uses a label-stratified validation split
+  important-feature M→B rate of 0.308 (Table 5) uses a label-stratified validation split
   without SHA-group control, in which 84-99 validation rows per seed share a SHA-256 with
   a training row. Re-deriving importance on a cleaned validation set gives 0.160 (random
   control unchanged at ≈0.028). The manuscript treats this difference as not attributable

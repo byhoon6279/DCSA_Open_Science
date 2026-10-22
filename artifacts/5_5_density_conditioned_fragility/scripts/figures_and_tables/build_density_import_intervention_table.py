@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Table 6 (`density_import_intervention.tex`, LightGBM-only) from the
+"""Build Table 7 (`density_import_intervention.tex`, LightGBM-only) from the
 already-bundled block3 import-intervention compact CSV.
 
 This script builds the manuscript LaTeX from
@@ -74,7 +74,7 @@ def build_tex(rows: dict[str, dict[str, str]]) -> str:
 \\textit{{Note.}}
 This table reports a separate five-seed density-stratified probe that
 deliberately reuses the PE-inspired intervention importance-ranking pipeline
-used for Table 7 to isolate the density effect, pooling test weeks and
+used for Table 5 to isolate the density effect, pooling test weeks and
 aggregating across density strata
 instead of averaging per-week measurements as in \\autoref{{tab:rq2_pe_import_validation}}.
 Both tables therefore select the same important dimensions and report the

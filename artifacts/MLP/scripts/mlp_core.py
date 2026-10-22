@@ -42,6 +42,7 @@ from common import (  # type: ignore
     summarize,
     week_paths,
 )
+from knn_utils import knn_indices_excluding_self  # type: ignore  # noqa: E402
 
 
 FEATURE_GROUPS = ["all", "header", "section", "imports", "strings"]
@@ -436,10 +437,8 @@ def compute_mix_at_k_values(X: np.ndarray, y: np.ndarray, k_values: Sequence[int
         return {int(k): 0.0 for k in k_values}
     max_k = max(int(k) for k in k_values)
     effective_max_k = max(1, min(max_k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_max_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    neighbor_labels = y[indices[:, 1:]]
+    indices = knn_indices_excluding_self(X, effective_max_k)
+    neighbor_labels = y[indices]
     return {
         int(k): float((neighbor_labels[:, : max(1, min(int(k), len(X) - 1))] != y[:, None]).mean())
         for k in k_values

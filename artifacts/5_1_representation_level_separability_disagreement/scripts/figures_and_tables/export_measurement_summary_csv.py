@@ -3,7 +3,7 @@
 Build the manuscript-facing measurement summary table used for Table 3.
 
 This table combines:
-- AUC / Mix@10 / JS from the LR class-balanced RQ1 summary
+- AUC / Mean Mix@k (k-average over {5, 10, 15, 20}) / JS from the LR class-balanced RQ1 summary
 - Silhouette from the matched LR class-balanced rerun with silhouette enabled
 """
 
@@ -65,7 +65,7 @@ def write_table(
             {
                 "feature_subset": feature,
                 "auc": f"{balanced_metrics['auc']:.4f}",
-                "mix_at_10": f"{balanced_metrics['mix_at_k']:.4f}",
+                "mean_mix_at_k": f"{balanced_metrics['mix_at_k']:.4f}",
                 "silhouette": f"{silhouette_metrics['silhouette']:.4f}",
                 "js_divergence": f"{balanced_metrics['js_divergence']:.4f}",
             }
@@ -75,7 +75,7 @@ def write_table(
     with out_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
             handle,
-            fieldnames=["feature_subset", "auc", "mix_at_10", "silhouette", "js_divergence"],
+            fieldnames=["feature_subset", "auc", "mean_mix_at_k", "silhouette", "js_divergence"],
         )
         writer.writeheader()
         writer.writerows(rows)

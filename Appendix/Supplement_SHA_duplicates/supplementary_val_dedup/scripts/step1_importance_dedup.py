@@ -15,7 +15,7 @@ For each of the 5 published seeds and both feature groups (header, imports):
 
 Everything here only reads DCSA_Open_Science (shared/common.py constants only, no
 DCSA code executed) and the raw EMBER2024 dataset; all outputs go under this
-workspace's results/ directory.
+folder's results/ directory.
 """
 from __future__ import annotations
 

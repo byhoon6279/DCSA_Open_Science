@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the manuscript's actual Table 7 (`pe_intervention_detailed.tex`,
+"""Build the manuscript's actual Table 5 (`pe_intervention_detailed.tex`,
 `\\label{tab:rq2_pe_import_validation}`), which is Wild (B)-only, LR/LightGBM/RF.
 
 This script reads the already-bundled sources directly (LR/LightGBM from

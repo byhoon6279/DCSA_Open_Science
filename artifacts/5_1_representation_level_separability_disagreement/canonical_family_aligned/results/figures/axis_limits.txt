@@ -1,0 +1,1 @@
+common limits over both views and all three models: x=(0.5103,0.9023) y=(0.6544,0.8088)

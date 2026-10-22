@@ -1,0 +1,7 @@
+view,model,new_cells,old_cells,cells_in_both,same_n_train,same_n_test,old_cells_with_test_families_lt_2,new_cells_with_train_families_lt_2,old_test_family_count_dist
+wild_b,lr,60,60,60,60,60,0,0,"{'18': 5, '19': 35, '20': 20}"
+wild_b,lightgbm,60,60,60,60,60,0,0,"{'18': 5, '19': 35, '20': 20}"
+wild_b,rf,60,60,60,60,60,0,0,"{'18': 5, '19': 35, '20': 20}"
+unpacked_b,lr,60,60,60,60,60,0,0,"{'18': 5, '19': 35, '20': 20}"
+unpacked_b,lightgbm,60,60,60,60,60,0,0,"{'18': 5, '19': 35, '20': 20}"
+unpacked_b,rf,60,60,60,60,60,0,0,"{'18': 5, '19': 35, '20': 20}"

@@ -46,6 +46,7 @@ from common import (  # type: ignore
     summarize,
     week_paths,
 )
+from knn_utils import knn_indices_excluding_self  # type: ignore  # noqa: E402
 
 try:
     from tqdm import tqdm
@@ -159,10 +160,8 @@ def compute_mix_at_k(X: np.ndarray, y: np.ndarray, k: int) -> float:
     if len(X) <= 1:
         return 0.0
     effective_k = max(1, min(k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    return float((y[indices[:, 1:]] != y[:, None]).mean())
+    indices = knn_indices_excluding_self(X, effective_k)
+    return float((y[indices] != y[:, None]).mean())
 
 
 def js_divergence_feature_mass(X_raw: np.ndarray, y: np.ndarray, eps: float = 1e-12) -> float:

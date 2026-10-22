@@ -1,7 +1,7 @@
 """
 Parse one EMBER2024 weekly jsonl file into a compact .npz cache
 (header_vec, imports_vec, label, sha256, week_id) for header+imports only.
-Read-only against the raw dataset; writes only into this workspace's cache/ dir.
+Read-only against the raw dataset; writes only into this folder's cache/ dir.
 """
 from __future__ import annotations
 

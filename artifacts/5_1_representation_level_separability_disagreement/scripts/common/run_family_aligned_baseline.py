@@ -34,6 +34,7 @@ from common import (  # type: ignore  # noqa: E402
     summarize,
     week_paths,
 )
+from knn_utils import knn_indices_excluding_self  # type: ignore  # noqa: E402
 
 
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "RQ1" / "RQ1-3" / "results" / "family_aligned_baseline"
@@ -174,10 +175,8 @@ def compute_same_family_rate_at_k(X: np.ndarray, y: np.ndarray, k: int) -> float
     if len(X) <= 1:
         return 0.0
     effective_k = max(1, min(k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    return float((y[indices[:, 1:]] == y[:, None]).mean())
+    indices = knn_indices_excluding_self(X, effective_k)
+    return float((y[indices] == y[:, None]).mean())
 
 
 def compute_same_family_rates_at_ks(
@@ -191,10 +190,8 @@ def compute_same_family_rates_at_ks(
     unique_k_values = sorted({int(k) for k in k_values})
     max_k = max(unique_k_values)
     effective_max_k = max(1, min(max_k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_max_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    neighbor_labels = y[indices[:, 1:]]
+    indices = knn_indices_excluding_self(X, effective_max_k)
+    neighbor_labels = y[indices]
 
     rates: Dict[int, float] = {}
     for k in unique_k_values:

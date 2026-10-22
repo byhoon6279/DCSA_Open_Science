@@ -11,6 +11,7 @@ matplotlib.rcParams['pdf.fonttype'] = 42  # embed fonts as TrueType
 matplotlib.rcParams['ps.fonttype'] = 42
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.ticker import MultipleLocator
 import seaborn as sns
 
 
@@ -36,9 +37,9 @@ def style() -> None:
     plt.rcParams["axes.spines.top"] = False
     plt.rcParams["axes.spines.right"] = False
     plt.rcParams["legend.frameon"] = False
-    plt.rcParams["axes.labelsize"] = 19
-    plt.rcParams["xtick.labelsize"] = 16
-    plt.rcParams["ytick.labelsize"] = 16
+    plt.rcParams["axes.labelsize"] = 24
+    plt.rcParams["xtick.labelsize"] = 20
+    plt.rcParams["ytick.labelsize"] = 20
 
 
 def load_summary(path: Path) -> Dict[str, Dict[str, Dict[str, float]]]:
@@ -76,10 +77,10 @@ def normalize(values: List[float], invert: bool = False) -> np.ndarray:
 
 
 def save_auc_js_scatter(summary: Dict[str, Dict[str, Dict[str, float]]], out_path: Path, png_also: bool = False) -> None:
-    fig, ax = plt.subplots(figsize=(7.8, 5.8))
+    fig, ax = plt.subplots(figsize=(6.6, 5.0))
 
     mix_values = [summary[group]["mix_at_k"]["mean"] for group in FEATURE_ORDER]
-    mix_sizes = 400 + 1800 * normalize(mix_values)
+    mix_sizes = 150 + 1450 * normalize(mix_values)
     auc_values = [summary[group]["auc"]["mean"] for group in FEATURE_ORDER]
     js_values = [summary[group]["js_divergence"]["mean"] for group in FEATURE_ORDER]
 
@@ -97,12 +98,16 @@ def save_auc_js_scatter(summary: Dict[str, Dict[str, Dict[str, float]]], out_pat
             linewidth=1.2,
         )
         if group == "strings":
-            label = "strings\n(high AUC, near-zero JS)"
+            label = "strings\n(high AUC,\nnear-zero JS)"
             offset = (10, 10)
             weight = "bold"
         elif group == "imports":
             label = group
             offset = (16, 12)
+            weight = "normal"
+        elif group == "header":
+            label = group
+            offset = (8, -8)
             weight = "normal"
         else:
             label = group
@@ -113,18 +118,20 @@ def save_auc_js_scatter(summary: Dict[str, Dict[str, Dict[str, float]]], out_pat
             (js, auc),
             xytext=offset,
             textcoords="offset points",
-            fontsize=14,
+            fontsize=19,
             fontweight=weight,
+            va="top" if group == "header" else "baseline",
         )
 
     ax.set_xlabel("JS Divergence")
     ax.set_ylabel("AUC")
     x_min = min(-0.01, min(js_values) - 0.005)
     x_max = max(0.135, max(js_values) + 0.015)
-    y_min = min(0.89, min(auc_values) - 0.015)
-    y_max = min(1.0, max(0.985, max(auc_values) + 0.012))
+    y_min = min(0.87, min(auc_values) - 0.015)
+    y_max = max(0.985, max(auc_values) + 0.022)
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(y_min, y_max)
+    ax.yaxis.set_major_locator(MultipleLocator(0.02))
     ax.grid(True, axis="y", linestyle="-", linewidth=0.9, alpha=0.5)
     ax.grid(True, axis="x", linestyle="-", linewidth=0.9, alpha=0.4)
     ax.text(
@@ -134,7 +141,7 @@ def save_auc_js_scatter(summary: Dict[str, Dict[str, Dict[str, float]]], out_pat
         transform=ax.transAxes,
         ha="right",
         va="bottom",
-        fontsize=13,
+        fontsize=17,
         bbox={"boxstyle": "round,pad=0.3", "facecolor": "white", "edgecolor": "#d0d0d0", "alpha": 0.9},
     )
     fig.tight_layout()

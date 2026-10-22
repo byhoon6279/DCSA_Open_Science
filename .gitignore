@@ -21,3 +21,12 @@ __pycache__/
 
 # In-progress post-hoc re-run, not referenced by the manuscript
 Appendix/Supplement_SHA_duplicates/posthoc_val_dedup/
+knn_audit/cache/
+/Data
+knn_audit/venv/
+
+# kNN self-exclusion audit: not part of the manuscript
+knn_audit/
+artifacts/shared/knn_utils.py
+artifacts/shared/test_knn_utils.py
+artifacts/5_1_representation_level_separability_disagreement/knn_audit_fig4/

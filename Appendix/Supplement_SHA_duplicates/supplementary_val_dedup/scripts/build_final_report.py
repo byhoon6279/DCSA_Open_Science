@@ -3,7 +3,7 @@ Assemble the final A/B/C comparison:
   A = published DCSA_Open_Science results (existing results.json / aggregate_results.csv,
       produced by their original run -- different machine/library versions, same
       code+config+seeds)
-  B = this workspace's own reproduction, using the ORIGINAL (uncleaned) validation
+  B = this reproduction, using the ORIGINAL (uncleaned) validation
       split for permutation importance (isolates reproduction fidelity: B-A)
   C = the SAME retrained model (identical train partition, identical test weeks),
       but permutation importance computed on the CLEANED validation split
@@ -47,7 +47,7 @@ pub_t55 = pub_table5_5[
 ][["selection_type", "flip_rate_across_weeks_mean", "malware_to_benign_rate_across_weeks_mean"]].set_index("selection_type")
 
 # ---------------------------------------------------------------------------
-# B/C: this workspace's reproduction (step2 = masking AUC/flip, step3 = Table 5-5)
+# B/C: this reproduction (step2 = masking AUC/flip, step3 = manuscript Table 5)
 # ---------------------------------------------------------------------------
 step1 = json.loads((RESULTS / "step1_summary.json").read_text())
 step1_df = pd.DataFrame(step1)
@@ -165,7 +165,7 @@ print(stab_per_seed.to_string(index=False))
 
 print()
 print("=" * 100)
-print("PART 5. Table 5-5: LightGBM 10% hashed-import intervention, A vs B vs C")
+print("PART 5. Table 5: LightGBM 10% hashed-import intervention, A vs B vs C")
 print("=" * 100)
 a_imp_flip = pub_t55.loc["important", "flip_rate_across_weeks_mean"]
 a_imp_m2b = pub_t55.loc["important", "malware_to_benign_rate_across_weeks_mean"]

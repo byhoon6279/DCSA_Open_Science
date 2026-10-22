@@ -49,11 +49,11 @@
     "scipy": "1.15.3",
     "pandas": "not pinned in artifacts/requirements.txt"
   },
-  "reproduction_fidelity_note": "Library versions differ from the original DCSA_Open_Science execution environment (see above). Empirically, this reproduction's 'original validation split' condition (B) matched the published results (A) to floating-point precision on every baseline AUC, masking AUC-degradation, flip-rate, and Table 5-5 hashed-import-intervention number checked -- see results/final_comparison.json, B_minus_A columns (~1e-17, i.e. exact match up to floating-point noise). The version differences did not introduce a measurable reproduction gap in this case.",
+  "reproduction_fidelity_note": "Library versions differ from the original DCSA_Open_Science execution environment (see above). Empirically, this reproduction's 'original validation split' condition (B) matched the published results (A) to floating-point precision on every baseline AUC, masking AUC-degradation, flip-rate, and manuscript Table 5 hashed-import-intervention number checked -- see results/final_comparison.json, B_minus_A columns (~1e-17, i.e. exact match up to floating-point noise). The version differences did not introduce a measurable reproduction gap in this case.",
   "raw_dataset_source": "Data/ (EMBER2024 raw feature jsonl files; read-only; not part of this repository)",
   "not_modified": [
     "DCSA_Open_Science (entire repository, read-only reference only)",
     "EMBER2024 raw dataset (read-only)"
   ],
-  "all_outputs_written_to": "Appendix/Supplement_SHA_duplicates/supplementary_val_dedup/ (this workspace only)"
+  "all_outputs_written_to": "Appendix/Supplement_SHA_duplicates/supplementary_val_dedup/ (this folder only)"
 }

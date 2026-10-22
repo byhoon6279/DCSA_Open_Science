@@ -1,6 +1,6 @@
 {
   "method_note": "CORRECTED = per-row normalized_drop = max(0,-delta_auc)/max(baseline_auc-0.5,1e-8), averaged over 12 weeks per seed, then averaged over 5 seeds -- matches DCSA's seed_level_normalized_drops() exactly for the important arm (verified against raw trial_results.csv for A; exact recomputation, not an approximation, since 'important' has exactly 1 trial per seed-week so there is no repeat-trial-averaging ambiguity).",
-  "random_arm_caveat": "This script only recomputes the 'important' arm exactly. The 'random' arm's correct procedure averages the per-row normalized_drop across the 20 repeat trials WITHIN each seed-week before further averaging; this workspace's step2 output only stored the already-trial-averaged delta_auc per seed-week (not the 20 individual trial deltas), so an exactly matching recomputation for 'random' is not possible from currently saved data without re-running step2 to persist per-trial rows.",
+  "random_arm_caveat": "This script only recomputes the 'important' arm exactly. The 'random' arm's correct procedure averages the per-row normalized_drop across the 20 repeat trials WITHIN each seed-week before further averaging; this reproduction's step2 output only stored the already-trial-averaged delta_auc per seed-week (not the 20 individual trial deltas), so an exactly matching recomputation for 'random' is not possible from currently saved data without re-running step2 to persist per-trial rows.",
   "results": [
     {
       "group": "header",

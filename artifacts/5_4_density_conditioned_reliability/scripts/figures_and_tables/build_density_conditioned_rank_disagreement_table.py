@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Table 5 (`density_conditioned_rank_disagreement.tex`,
+"""Build Table 6 (`density_conditioned_rank_disagreement.tex`,
 `\\label{tab:rq3_block1_rank_disagreement}`) from the per-model
 "conflicts" CSVs (mean pairwise ordering conflicts between AUC and
 structure-level rankings, per density bin).

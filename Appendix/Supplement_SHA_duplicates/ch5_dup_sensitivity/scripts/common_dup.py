@@ -84,8 +84,8 @@ def _chunks(n: int, size: int):
 
 def knn_mismatch(X: np.ndarray, y: np.ndarray, k: int, chunk: int | None = None, workers: int = 10) -> np.ndarray:
     """Returns an (n, k) bool matrix: neighbour j (sorted by distance) has a different label."""
-    """Per-sample mismatch rate among the k nearest neighbours (euclidean),
-    excluding the single nearest entry (= sklearn kneighbors(X)[:, 1:] semantics).
+    """Per-sample mismatch among the k nearest neighbours (euclidean), query row excluded
+    by index (an identical-vector twin stays a candidate).
     Exact brute force; float32 GEMM for distances."""
     Xf = np.ascontiguousarray(X, dtype=np.float32)
     sq = np.einsum("ij,ij->i", Xf, Xf)
@@ -98,7 +98,9 @@ def knn_mismatch(X: np.ndarray, y: np.ndarray, k: int, chunk: int | None = None,
         part = np.argpartition(d, k + 1, axis=1)[:, : k + 1]
         dsel = np.take_along_axis(d, part, axis=1)
         order = np.argsort(dsel, axis=1, kind="stable")
-        nb = np.take_along_axis(part, order, axis=1)[:, 1:]
+        nb_all = np.take_along_axis(part, order, axis=1)
+        is_self = nb_all == (s + np.arange(e - s))[:, None]
+        nb = np.take_along_axis(nb_all, np.argsort(is_self, axis=1, kind="stable"), axis=1)[:, :k]
         out[s:e] = y[nb] != y[s:e, None]
 
     with ThreadPoolExecutor(workers) as ex:

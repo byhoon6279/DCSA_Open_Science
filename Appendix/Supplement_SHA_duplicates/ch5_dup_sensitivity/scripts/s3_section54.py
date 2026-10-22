@@ -1,4 +1,4 @@
-"""Stage 3: thesis 5.3.4 / Fig 5-5 (DCSA 5.4) density-conditioned Mix@10, Wild(B).
+"""Stage 3: manuscript Section 5.4 (Fig. 8) density-conditioned Mix@10, Wild(B).
 
 DCSA config replicated: density_reliability_controlled_main (balance_test=True,
 max_test_per_class=20000 per week, pooled over 12 weeks; train 20,000/class;

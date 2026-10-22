@@ -9,7 +9,7 @@ targeted stress is applied.
 ## Manuscript outputs
 
 - Figure 8: density-conditioned AUC and Mix@10 across feature subsets under Wild (B)
-- Table 5: disagreement gap between dense and sparse regions
+- Table 6: disagreement gap between dense and sparse regions
 - Appendix F.1 (reliability half): class-conditional density-composition sensitivity
 
 ## Directory structure
@@ -25,7 +25,7 @@ targeted stress is applied.
 │   ├── LightGBM/                 # per-run output + rank-disagreement CSV
 │   ├── RF/                       # per-run output + rank-disagreement CSV
 │   ├── figures/                    # Figure 8 (6 PDFs)
-│   └── manuscript_tables/           # density_conditioned_rank_disagreement.tex (Table 5)
+│   └── manuscript_tables/           # density_conditioned_rank_disagreement.tex (Table 6)
 ├── scripts/
 │   ├── common/                     # run_density_stratified_reliability{,_with_rf}.py
 │   └── figures_and_tables/          # plot_density_stratified_reliability.py,

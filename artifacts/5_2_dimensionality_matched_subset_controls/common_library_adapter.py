@@ -42,6 +42,11 @@ warnings.filterwarnings(
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
+_SHARED_LIB_DIR = REPO_ROOT / "artifacts" / "shared"
+if str(_SHARED_LIB_DIR) not in sys.path:
+    sys.path.insert(0, str(_SHARED_LIB_DIR))
+from knn_utils import knn_indices_excluding_self  # type: ignore  # noqa: E402
+
 # `common.py` is bundled alongside this package at
 # `DCSA_Open_Science/artifacts/shared/common.py`. Pass `common_py=`
 # explicitly to override.
@@ -188,10 +193,8 @@ def compute_mix_at_k(X: np.ndarray, y: np.ndarray, k: int) -> float:
     if len(X) <= 1:
         return 0.0
     effective_k = max(1, min(k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    return float((y[indices[:, 1:]] != y[:, None]).mean())
+    indices = knn_indices_excluding_self(X, effective_k)
+    return float((y[indices] != y[:, None]).mean())
 
 
 def js_divergence_feature_mass(X_raw: np.ndarray, y: np.ndarray, eps: float = 1e-12) -> float:
@@ -214,10 +217,8 @@ def compute_same_family_rate_at_k(X: np.ndarray, families: Sequence[str], k: int
         return 0.0
     fam = np.asarray(list(families), dtype=object)
     effective_k = max(1, min(k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    return float((fam[indices[:, 1:]] == fam[:, None]).mean())
+    indices = knn_indices_excluding_self(X, effective_k)
+    return float((fam[indices] == fam[:, None]).mean())
 
 
 class CommonLibraryAdapter:

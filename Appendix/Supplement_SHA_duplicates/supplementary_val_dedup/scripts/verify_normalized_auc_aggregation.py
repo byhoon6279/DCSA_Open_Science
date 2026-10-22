@@ -1,6 +1,6 @@
 """
 Check-only script (no new model training/prediction): verifies whether this
-workspace's "normalized AUC degradation" numbers were computed with the same
+reproduction's "normalized AUC degradation" numbers were computed with the same
 aggregation order as DCSA_Open_Science's own figure-generating code
 (seed_level_normalized_drops() in
 scripts/figures_and_tables/plot_decision_level_masking_collapse_v2.py), and
@@ -15,7 +15,7 @@ DCSA's method (ground truth):
   3. average over the 12 weeks within each seed -> 5 seed-level values
   4. the reported/plotted value = mean of the 5 seed-level values
 
-This workspace's PART 2 table instead computed:
+This reproduction's PART 2 table instead computed:
   normalized_degradation(mean_baseline_auc, mean_delta_auc) = -mean_delta / (mean_baseline-0.5)
   i.e. averaged delta_auc and baseline_auc FIRST, across weeks/seeds, THEN
   normalized ONCE -- a different (and generally not equal) statistic, and
@@ -55,7 +55,7 @@ def a_seed_level_values(group: str, strength: float) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# B/C (this workspace): recompute from step2_trial_rows.json (has per-seed,
+# B/C (this reproduction): recompute from step2_trial_rows.json (has per-seed,
 # per-week baseline_auc + delta_auc_orig/delta_auc_clean -- exact for "important",
 # since there's exactly 1 important row per seed/week/strength, same as A)
 # ---------------------------------------------------------------------------
@@ -119,7 +119,7 @@ out = {
     "random_arm_caveat": (
         "This script only recomputes the 'important' arm exactly. The 'random' arm's correct "
         "procedure averages the per-row normalized_drop across the 20 repeat trials WITHIN each "
-        "seed-week before further averaging; this workspace's step2 output only stored the "
+        "seed-week before further averaging; this reproduction's step2 output only stored the "
         "already-trial-averaged delta_auc per seed-week (not the 20 individual trial deltas), "
         "so an exactly matching recomputation for 'random' is not possible from currently saved "
         "data without re-running step2 to persist per-trial rows."

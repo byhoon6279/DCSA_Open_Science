@@ -88,7 +88,7 @@ Relevant manuscript outputs:
 - Figure 5: decision-level AUC degradation under targeted masking
 - Figure 6: two-axis decision/structure response under targeted masking
 - Figure 7: prediction-level instability under targeted masking
-- Table 7: prediction instability under PE-inspired import interventions
+- Table 5: prediction instability under PE-inspired import interventions
 - Appendix Figure D.1: decision-level collapse under Wild (U) and Unpacked (B) (generating
   script and Wild (U)/Unpacked (B) decision-collapse panels live under
   `Appendix/Section_D/`, not here; the structural-response-map
@@ -118,9 +118,9 @@ Where to look:
 - `scripts/common/`: experiment runners shared across model families (the
   `_with_rf.py` files natively handle RF too, via `model_type`/`--model`)
 - `scripts/figures_and_tables/`: figure/table builders
-- `results/manuscript_tables/pe_intervention_detailed.tex`: Table 7 (Wild (B)-only,
+- `results/manuscript_tables/pe_intervention_detailed.tex`: Table 5 (Wild (B)-only,
   LR/LightGBM/RF), built by `scripts/figures_and_tables/build_pe_intervention_detailed_table.py`
-- `pe_inspired_feature_intervention/`: assets backing the Table 7 PE-inspired intervention
+- `pe_inspired_feature_intervention/`: assets backing the Table 5 PE-inspired intervention
   table in the main text. `scripts/run_pe_feature_intervention_validation.py` handles
   LR/LightGBM; `scripts/run_pe_feature_intervention_validation_with_rf.py` is a self-contained
   fork that natively adds RF (`--model random_forest`), invoked via
@@ -131,7 +131,7 @@ Covers Section 5.4 on density-conditioned reliability before perturbation.
 
 Relevant manuscript outputs:
 - Figure 8: density-conditioned AUC and Mix@10 across feature subsets under Wild (B)
-- Table 5: disagreement gap between dense and sparse regions
+- Table 6: disagreement gap between dense and sparse regions
 - Appendix subsection F.1 "Class-Conditional Density-Composition Sensitivity" (reliability half)
 
 Where to look:
@@ -142,7 +142,7 @@ Where to look:
   renaming its `figure_density_reliability_{auc,mix_at_10}.pdf` output to
   `density_conditioned_{auc,mix_at_10}_wild_b_<model>.pdf`.
 - `results/manuscript_tables/`: rank-disagreement and significance tables used in Section 5.4.
-  `density_conditioned_rank_disagreement.tex` (Table 5)'s RF column is generated
+  `density_conditioned_rank_disagreement.tex` (Table 6)'s RF column is generated
   via `plot_density_stratified_reliability.py --input-dir results/RF/rf_full_wild_b/k_10`,
   producing `results/RF/density_reliability_rf_controlled_table_rq3_density_reliability_conflicts.csv`;
   `scripts/figures_and_tables/build_density_conditioned_rank_disagreement_table.py`
@@ -159,7 +159,7 @@ Covers Section 5.5 on density-conditioned fragility under masking and interventi
 
 Relevant manuscript outputs:
 - Figure 9: density-conditioned AUC drop under feature masking
-- Table 6: density-conditioned malware-to-benign transition rates under the PE-inspired import intervention
+- Table 7: density-conditioned malware-to-benign transition rates under the PE-inspired import intervention
 - Appendix Figure F.1: density-conditioned flip-rate plots
 - Appendix subsection F.1 "Class-Conditional Density-Composition Sensitivity" (stress-amplification
   half; not to be confused with Appendix Figure F.1 above, a different counter)
@@ -167,7 +167,7 @@ Relevant manuscript outputs:
 Where to look:
 - `results/figures/`: manuscript plots for AUC drop and flip-rate comparisons
 - `results/manuscript_tables/`: density fragility and significance table exports,
-  including `density_import_intervention.tex` (Table 6, LightGBM-only, built by
+  including `density_import_intervention.tex` (Table 7, LightGBM-only, built by
   `scripts/figures_and_tables/build_density_import_intervention_table.py` from
   `density_import_intervention.csv`). The manuscript's own text frames this check
   as "an additional LightGBM-only check" by design, not an RF result pending
@@ -176,7 +176,7 @@ Where to look:
 - `scripts/common/`: experiment runners shared across model families (the
   `_with_rf.py` files natively handle RF too, via `model_type`/`--model`), plus
   `run_density_conditioned_import_intervention_probe.py` (the LightGBM-only
-  block-3 import-intervention probe backing Table 6 — configs under
+  block-3 import-intervention probe backing Table 7 — configs under
   `configs/LightGBM/block3_probe_lightgbm_imports_seed*.json`, raw/merged
   outputs under `results/LightGBM/block3_probe_lightgbm_imports_*`) and its merge
   script (`merge_density_conditioned_import_intervention_probe_results.py`) and parallel-run shell scripts

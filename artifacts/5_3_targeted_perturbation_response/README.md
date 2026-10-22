@@ -4,7 +4,7 @@ Masks 1%/5%/10% of the `header` and `imports` feature dimensions — comparing
 importance-ranked ("important") masking against random masking — and
 measures the resulting AUC degradation, prediction-flip rate, and change in
 Mix@10, for LR, LightGBM, and RF. Also covers the PE-inspired hashed
-import-feature intervention (Table 7) and its more detailed
+import-feature intervention (Table 5) and its more detailed
 per-week/per-model breakdown.
 
 **On "AUC degradation" terminology:** this repository reports two distinct
@@ -40,7 +40,7 @@ procedure.
 - Figure 5: decision-level AUC degradation under targeted masking
 - Figure 6: two-axis decision/structure response under targeted masking
 - Figure 7: prediction-level instability under targeted masking
-- Table 7: prediction instability under PE-inspired import interventions
+- Table 5: prediction instability under PE-inspired import interventions
 - Appendix Figure D.1: decision-level collapse under Wild (U) and Unpacked (B)
 - Appendix Table D.1: sensitivity of ΔMix@k to neighborhood size
 - Appendix Table E.1: statistical significance of the important-vs-random masking gap
@@ -58,7 +58,7 @@ procedure.
 │   ├── LightGBM/                   # per-run output dirs (gain/permutation importance variants)
 │   ├── RF/                         # per-run output dirs
 │   ├── figures/                     # Figure 5-7, Appendix Figure D.1 (17 PDFs)
-│   └── manuscript_tables/            # Table 7, Appendix Table D.1 exports
+│   └── manuscript_tables/            # Table 5, Appendix Table D.1 exports
 ├── scripts/
 │   ├── common/                      # experiment runners (`_with_rf.py` variants handle RF too)
 │   ├── RF/                          # run_pe_intervention_rf.sh launcher

@@ -1,4 +1,4 @@
-"""Stage 2: thesis 5.3.1 (DCSA 5.1) Wild(B) LR run -- Mix@k and silhouette per
+"""Stage 2: manuscript Section 5.1 Wild(B) LR run -- Mix@k and silhouette per
 (seed, week, feature group), with all test rows (DCSA default: duplicate rows kept)
 vs. one row per SHA-256 (dedup). Train sample / scaler identical to DCSA in both.
 

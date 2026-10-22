@@ -32,6 +32,7 @@ from common import (  # type: ignore
     summarize,
     week_paths,
 )
+from knn_utils import knn_indices_excluding_self  # type: ignore  # noqa: E402
 
 """
 RQ3 Block 1: Density-Stratified Reliability of Feature-Subset Separability
@@ -168,10 +169,8 @@ def compute_sample_mix_at_k(X: np.ndarray, y: np.ndarray, k: int) -> np.ndarray:
     if len(X) <= 1:
         return np.zeros(len(X), dtype=np.float64)
     effective_k = max(1, min(k, len(X) - 1))
-    nn = NearestNeighbors(n_neighbors=effective_k + 1, metric="euclidean")
-    nn.fit(X)
-    _, indices = nn.kneighbors(X)
-    neighbor_labels = y[indices[:, 1:]]
+    indices = knn_indices_excluding_self(X, effective_k)
+    neighbor_labels = y[indices]
     return (neighbor_labels != y[:, None]).mean(axis=1)
 
 

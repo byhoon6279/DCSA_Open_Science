@@ -1,5 +1,5 @@
 """
-Step 3: reproduce Table 5-5 (LightGBM, 10% hashed-import PE-inspired
+Step 3: reproduce manuscript Table 5 (LightGBM, 10% hashed-import PE-inspired
 intervention, Wild(B)) with the same clean-vs-original-importance comparison
 as steps 1-2. This mirrors
 pe_inspired_feature_intervention/scripts/run_pe_feature_intervention_validation.py's
